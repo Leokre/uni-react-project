@@ -1,6 +1,6 @@
 
 
-const Input = ({type,text,cssClass,input,setInput}) => {
+const Input = ({type,cssClass,input,setInput}) => {
     
     
     return (
@@ -9,7 +9,6 @@ const Input = ({type,text,cssClass,input,setInput}) => {
 }
 
 Input.defaultProps = {
-    text: "",
     cssClass: "input"
 }
 
