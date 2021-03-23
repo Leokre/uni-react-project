@@ -1,11 +1,10 @@
 
 
-const Input = ({type,cssClass,input,setInput}) => {
+const Input = ({type,cssClass,state,setState}) => {
     
     
-    return (
-        <input type={type} value={input} onInput={i => setInput(i.target.value)}/>
-    )
+    return <input type={type} value={state} onInput={i => setState(i.target.value)}/>
+    
 }
 
 Input.defaultProps = {
