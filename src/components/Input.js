@@ -3,7 +3,8 @@
 const Input = ({type,cssClass,state,setState}) => {
     
     
-    return <input type={type} value={state} onInput={i => setState(i.target.value)}/>
+    
+    return <input type={type} value={state} onInput={e => setState(e.target.value)}/>
     
 }
 
