@@ -18,7 +18,7 @@ const Index = ({callback}) => {
                 
                 
                 <Link to="/login/confirmation">
-                <Button text="Login" className="loginButton" onClick={callback(username,password,alreadyRegistered)}/>
+                <Button text="Login" className="loginButton" onClick={e => callback(username,password,alreadyRegistered)}/>
                 </Link>
                 <Button text="Bereits registriert?" className="alreadyRegisteredButton" onClick={e => setAlreadyRegistered(true)}/>
                 
