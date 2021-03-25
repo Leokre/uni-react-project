@@ -8,10 +8,15 @@ import Button from "./components/Button"
 
 function App() {
   let username,password,registered = "";
-  function callback(user,pass,reg){
+  function callbackLogin(user,pass,reg){
     username = user;
     password = pass;
     registered = reg;
+
+  }
+
+  function callbackProfChatOverview(){
+    
 
   }
   return (
@@ -19,15 +24,26 @@ function App() {
     <div className="App">
       {/*Weiterleitungslogik hier rein*/}
       <p>Navigation:</p>
+      <Link to="/">
+            <Button text="Home" className="homeButton"/>
+      </Link>
       <Link to="/login">
             <Button text="Login" className="loginButton"/>
+      </Link>
+      <Link to="/ProfChatOverview">
+            <Button text="ProfChatOverview" className="ProfChatOverviewButton"/>
       </Link>
 
       
       {/*Routing hier*/}
+      <Route path="/ProfChatOverview" exact render={(props)=>(
+      <>
+        <ProfChatOverview />
+      </>
+    )}></Route>
       <Route path="/login" exact render={(props)=>(
       <>
-        <Login callback={callback}/>
+        <Login callback={callbackLogin}/>
       </>
     )}></Route>
     <Route path="/login/confirmation" exact render={(props)=>(
