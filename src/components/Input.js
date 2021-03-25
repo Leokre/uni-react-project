@@ -2,7 +2,7 @@
 
 const Input = ({type,cssClass,state,setState,onkeydown}) => {
     function handleKeyPress(e){
-        if(e.key == "Enter" && state != ""){
+        if(onkeydown!= undefined && e.key == "Enter" && state != ""){
             onkeydown(state)
             setState('')
         }
