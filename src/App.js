@@ -10,6 +10,8 @@ import Axios from "axios"
 import {useState} from "react"
 import qs from "qs"
 import {logout} from "./Helpers"
+import Dashboard from "./pages/Startseite/index.js"
+import AddSession from "./pages/Startseite/AddSession.js"
 
 
 function App() {
@@ -70,6 +72,10 @@ function App() {
             <Link to="/ProfChatOverview">
                   <Button cssClass="MainMenuButton" text="ProfChatOverview" className="ProfChatOverviewButton"/>
             </Link>
+
+            <Link to="/dashboard">
+                  <Button cssClass="MainMenuButton" text="Dashboard" />
+            </Link>
           
                 <Button cssClass="MainMenuButton" text={username} id="profileButton"/>  
                 <Button cssClass="MainMenuButton" text="Logout" id="logoutButton" onClick={()=>logout(backendURL)}/>
@@ -89,6 +95,14 @@ function App() {
         </>
         
       )}></Route>
+
+<Route path="/dashboard" exact render={(props)=>(
+        <>
+          <Dashboard />
+        </>
+        
+      )}></Route>
+
       <Route path="/login/register" exact render={(props)=>(
         <>
           <Register />
@@ -120,12 +134,18 @@ function App() {
         <Link to="/ProfChatOverview">
               <Button cssClass="MainMenuButton" text="ProfChatOverview" className="ProfChatOverviewButton"/>
         </Link>
+
+        <Link to="/dashboard">
+                  <Button cssClass="MainMenuButton" text="Dashboard" />
+            </Link>
+
         <Link to="/login">
               <Button cssClass="MainMenuButton" id="loginButton" text="Login" className="loginButton"/>
         </Link>
         <Link to="/login/register">
               <Button cssClass="MainMenuButton" text="Register" className="Register"/>
         </Link>
+
         </div>
         </div>
         
@@ -140,10 +160,28 @@ function App() {
           <Login />
         </>
         
+
+        
       )}></Route>
+
+<Route path="/dashboard" exact render={(props)=>(
+        <>
+          <Dashboard />
+        </>
+        
+      )}></Route>
+
       <Route path="/login/register" exact render={(props)=>(
         <>
           <Register />
+        </>
+        
+      )}></Route>
+      
+
+      <Route path="/addSession" exact render={(props)=>(
+        <>
+          <AddSession/>
         </>
         
       )}></Route>
