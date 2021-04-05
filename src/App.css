@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+.MainMenu{
+  height: 4.8vh;
+  width: 99%;
+  padding: 0px;
+  margin:0px;
+  background-color:#20339e;
+  border:10px solid black;
+}
+
+.MainMenuButton{
+    background-color: #051572; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration:none;
+    display: inline-block;
+    font-size: 16px;
+    border:1px solid black;
+  
+}
+#loginButton{
+  background-color: #4CAF50;
+}
+#logoutButton{
+  background-color: #ac2929;
+}
+.Buttons{
+  float:right;
+}
+#userCardProfilePic{
+  float:left;
+}
+#userCardUserName{
+  float:right;
+}
