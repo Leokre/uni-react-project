@@ -1,6 +1,6 @@
-const Paragraph = ({text,cssClass}) => {
+const Paragraph = ({text,cssClass,id}) => {
     return (
-        <p className={cssClass}>{text}</p>
+        <p className={cssClass} id= {id}>{text}</p>
     )
 }
 
