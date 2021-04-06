@@ -38,16 +38,16 @@
 }
 
 .MainMenu{
-  height: 4.8vh;
+  height: 6vh;
   width: 99%;
   padding: 0px;
   margin:0px;
-  background-color:#20339e;
+  background-color:#000000;
   border:10px solid black;
 }
 
 .MainMenuButton{
-    background-color: #051572; 
+    background-color: #000000; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -73,3 +73,5 @@
 #userCardUserName{
   float:right;
 }
+
+

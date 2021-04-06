@@ -1,5 +1,8 @@
 
 import { useState } from 'react'
+import Button from '../../components/Button.js'
+import {Link} from "react-router-dom"
+import './Dashboard.css'
 
 
 
@@ -57,7 +60,7 @@ setSession([...session, {id:'23',thema:session.thema,rolle:'453',datum:'34',extr
            Erstellungsdatum
         </div> 
         <div class="table-cell last-cell">
-            Thema
+           -
         </div> 
     </div>
 
@@ -78,8 +81,9 @@ setSession([...session, {id:'23',thema:session.thema,rolle:'453',datum:'34',extr
 <div class="table-cell">
     <p>{element.datum}</p>
 </div>
+
 <div class="table-cell last-cell">
-    <p>{element.extra}</p>
+<Link to = "/einstellungen">   <Button text = "Einstellungen"/>   </Link> 
 </div>   
 
 </div> 

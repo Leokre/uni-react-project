@@ -12,6 +12,8 @@ import qs from "qs"
 import {logout} from "./Helpers"
 import Dashboard from "./pages/Startseite/index.js"
 import AddSession from "./pages/Startseite/AddSession.js"
+import Setting from "./pages/Startseite/Settings.js"
+import Chat from "./pages/Chat/chatBody/ChatBody.js"
 
 
 function App() {
@@ -131,7 +133,7 @@ function App() {
         <Link to="/">
               <Button cssClass="MainMenuButton" text="Home" className="homeButton"/>
         </Link>
-        <Link to="/ProfChatOverview">
+        <Link to="/Chat">
               <Button cssClass="MainMenuButton" text="ProfChatOverview" className="ProfChatOverviewButton"/>
         </Link>
 
@@ -150,9 +152,9 @@ function App() {
         </div>
         
         {/*Routing hier*/}
-        <Route path="/ProfChatOverview" exact render={(props)=>(
+        <Route path="/Chat" exact render={(props)=>(
         <>
-          <ProfChatOverview />
+          <Chat />
         </>
       )}></Route>
         <Route path="/login" exact render={(props)=>(
@@ -174,6 +176,13 @@ function App() {
       <Route path="/login/register" exact render={(props)=>(
         <>
           <Register />
+        </>
+        
+      )}></Route>
+
+<Route path="/einstellungen" exact render={(props)=>(
+        <>
+         <Setting/>
         </>
         
       )}></Route>
