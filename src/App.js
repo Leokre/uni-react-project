@@ -71,8 +71,8 @@ function App() {
             <Link to="/">
                   <Button cssClass="MainMenuButton" text="Home" className="homeButton"/>
             </Link>
-            <Link to="/ProfChatOverview">
-                  <Button cssClass="MainMenuButton" text="ProfChatOverview" className="ProfChatOverviewButton"/>
+            <Link to="/Chat">
+              <Button cssClass="MainMenuButton" text="Chat" className="ProfChatOverviewButton"/>
             </Link>
 
             <Link to="/dashboard">
@@ -86,6 +86,11 @@ function App() {
   
         
         {/*Routing hier*/}
+        <Route path="/Chat" exact render={(props)=>(
+        <>
+          <Chat />
+        </>
+        )}></Route>
         <Route path="/ProfChatOverview" exact render={(props)=>(
         <>
           <ProfChatOverview />
@@ -134,7 +139,7 @@ function App() {
               <Button cssClass="MainMenuButton" text="Home" className="homeButton"/>
         </Link>
         <Link to="/Chat">
-              <Button cssClass="MainMenuButton" text="ProfChatOverview" className="ProfChatOverviewButton"/>
+              <Button cssClass="MainMenuButton" text="Chat" className="ProfChatOverviewButton"/>
         </Link>
 
         <Link to="/dashboard">
