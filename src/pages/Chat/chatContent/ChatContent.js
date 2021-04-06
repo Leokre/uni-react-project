@@ -23,6 +23,7 @@ export default class ChatContent extends Component {
     },
   ];
 
+
   constructor(props) {
     super(props);
     this.state = {
@@ -30,6 +31,8 @@ export default class ChatContent extends Component {
       msg: "",
     };
   }
+
+  
 
   scrollToBottom = () => {
     this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
