@@ -83,7 +83,7 @@ setSession([...session, {id:'23',thema:session.thema,rolle:'453',datum:'34',extr
 </div>
 
 <div class="table-cell last-cell">
-<Link to = "/einstellungen">   <Button text = "Einstellungen"/>   </Link> 
+<Link to = "/Sessionverwalten">   <Button text = "Einstellungen"/>   </Link> 
 </div>   
 
 </div> 

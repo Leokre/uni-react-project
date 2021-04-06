@@ -12,7 +12,7 @@ import qs from "qs"
 import {logout} from "./Helpers"
 import Dashboard from "./pages/Startseite/index.js"
 import AddSession from "./pages/Startseite/AddSession.js"
-import Setting from "./pages/Startseite/Settings.js"
+import Sessionverwalten from "./pages/Sessionverwalten/SessionVerwalten.js"
 import Chat from "./pages/Chat/chatBody/ChatBody.js"
 
 
@@ -180,9 +180,9 @@ function App() {
         
       )}></Route>
 
-<Route path="/einstellungen" exact render={(props)=>(
+<Route path="/Sessionverwalten" exact render={(props)=>(
         <>
-         <Setting/>
+         <Sessionverwalten/>
         </>
         
       )}></Route>
