@@ -1,5 +1,6 @@
 import React from 'react'
 import './Settings.css'
+import SessionVerwalten from '../SessionVerwalten/SessionVerwalten'
 
 
 
@@ -15,7 +16,7 @@ const Settings = () => {
         <div className = "fenster" >
            
            
-<button className = "button" text = 'hiii'> </button>
+<SessionVerwalten/>
 
 
       
