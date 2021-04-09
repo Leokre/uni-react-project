@@ -88,7 +88,7 @@ function App() {
         {/*Routing hier*/}
         <Route path="/Chat" exact render={(props)=>(
         <>
-          <Chat />
+          <Chat currentSession="1"/>
         </>
         )}></Route>
         <Route path="/ProfChatOverview" exact render={(props)=>(

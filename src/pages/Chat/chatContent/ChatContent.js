@@ -3,6 +3,25 @@ import React, { Component, useState, createRef, useEffect } from "react";
 import "./chatContent.css";
 import Avatar from "../chatList/Avatar";
 import ChatItem from "./ChatItem";
+import socketIOClient from "socket.io-client";
+const BackendSocket = "http://localhost:5001"
+
+//const socket = socketIOClient(BackendSocket);
+const socket = socketIOClient(BackendSocket, {transports: ['websocket']} );
+
+socket.on('login',message =>{
+  console.log("I logged in");
+})
+
+socket.on('serverMessage',message =>{
+  console.log(message);
+})
+
+socket.on('newMessage',messageObject =>{
+  console.log("User: " + messageObject.username + " | Message: " + messageObject.message);
+})
+
+
 
 export default class ChatContent extends Component {
   messagesEndRef = createRef(null);
@@ -32,11 +51,14 @@ export default class ChatContent extends Component {
     };
   }
 
-  
+
 
   scrollToBottom = () => {
     this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
+
+  
 
   componentDidMount() {
     window.addEventListener("keydown", (e) => {
@@ -101,7 +123,7 @@ export default class ChatContent extends Component {
         </div>
         <div className="content__footer">
           <div className="sendNewMessage">
-            <button className="addFiles">
+            <button className="addFiles"  onClick={()=>socket.emit('joinChat',{sessID: 1,groupID:1})}>
               <i className="fa fa-plus"></i>
             </button>
             <input
@@ -110,7 +132,7 @@ export default class ChatContent extends Component {
               onChange={this.onStateChange}
               value={this.state.msg}
             />
-            <button className="btnSendMsg" id="sendMsgBtn">
+            <button className="btnSendMsg" id="sendMsgBtn" onClick={()=>socket.emit('newMessage',{msg: this.state.msg})}>
               <i className="fa fa-paper-plane"></i>
             </button>
           </div>
