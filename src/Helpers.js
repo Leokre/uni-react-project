@@ -51,3 +51,7 @@ export function register(usr,pwd,backendURL){
           }
       })
   }
+
+  export function msgTimeFromTimestamp(timestamp){
+
+  }
