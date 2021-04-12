@@ -5,6 +5,7 @@ import {Link} from "react-router-dom"
 import Axios from "axios"
 import qs from "qs"
 import {register} from "../../Helpers"
+import "./Login.css"
 /*
 
 isLoggedIn is not set properly
@@ -58,8 +59,10 @@ const Index = ({}) => {
 
     if(!alreadyRegistered){
         return (
-            <div>
+            <div class = "container">
                 
+<form >
+
                 <h1>Willkommen auf unserer Plattform</h1>
                 <h4>Wie dürfen wir sie nennen?</h4>
                 <Input  state={username} setState={setUsername}/>
@@ -73,14 +76,21 @@ const Index = ({}) => {
 
 
                 }}/>
-                <Button text="Bereits registriert?" className="alreadyRegisteredButton" onClick={e => setAlreadyRegistered(true)}/>
-                
+              <br></br>  <br></br> 
+              <Button text="Bereits Mitglied?" className="alreadyRegisteredButton" onClick={e => setAlreadyRegistered(true)}/>
     
+
+                </form>
+
+               
             </div>
+            
         )
     }else{
         return (
-            <div>
+            <div className= "container">
+
+                <form>
                 <h1>Willkommen zurück!</h1>
                 <Input  state={username} setState={setUsername}/>
                 <Input  state={password} setState={setPassword}/>
@@ -92,7 +102,7 @@ const Index = ({}) => {
 
 
                 }}/>
-          
+          </form>
             </div>
         )
     }

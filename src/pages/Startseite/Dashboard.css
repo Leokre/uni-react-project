@@ -1,20 +1,4 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
-  
-  
-  
+
   
   * {
   
@@ -40,7 +24,7 @@ body {
     height: 150px;
     border: 1px solid #4b4545;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: #242424;
     border-radius: 4px;
     box-shadow: 1 1 1 1 #ffffff;
     transition: ease-out 0.3s;
@@ -67,7 +51,7 @@ body {
   bottom: 0;
   opacity: 0;
   content: "";
-  background-color: #256ce1;
+  background-color: #3fa042;
   
   }
   
@@ -82,12 +66,7 @@ body {
   }
   
   
-  
-  
-  
-  
-  
-  
+ 
   
   
   *{
@@ -107,19 +86,19 @@ body {
     font-family: sans-serif;
     background: transparent;
     padding: 12px 0;
-    color:  #000000;
+    color:  #242424;
     font-size: 13px;
     box-shadow: 0 1px 4px 0px rgba(0,0,50,0.3);
   }
   .table-head{
-    background-color:  rgb(0, 0, 0);
+    background-color:  #242424;
     box-shadow: none;
     color: #fff;
     font-weight: 600;
   }
   .table-head .table-cell{
     border-right: none;
-    background-color:  rgb(0, 0, 0);
+    background-color: #242424;
   }
   .table-cell{
     display: table-cell;

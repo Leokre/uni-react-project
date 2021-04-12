@@ -3,6 +3,7 @@ import Input from "../../components/Input";
 import { useState} from "react";
 import {Link} from "react-router-dom"
 import {register} from "../../Helpers"
+import './Login.css'
 
 
 const Register = ({}) => {
@@ -13,11 +14,29 @@ const Register = ({}) => {
     
     
     return (
-        <div>
-            <h1>Registrierung</h1>
+        <div class = "container">
+           
+<form>
+
+<h1>Registrierung</h1>
+
+            <div class= "form-group">
+                <label>Nutzername</label>
                 <Input  state={username} setState={setUsername}/>
-                <Input  state={password} setState={setPassword}/>
-                <Button text="Register" cssClass="btn" onClick={()=>register(username,password,backendURL)} />
+
+                </div>
+                <div class= "form-group">
+                <label>Passwort</label>
+                <Input state={password} setState={setPassword}/>
+
+                </div>
+
+
+           
+
+                <Button text="Register" Class="btn" onClick={()=>register(username,password,backendURL)} />
+
+                </form>
                 
         </div>
     )

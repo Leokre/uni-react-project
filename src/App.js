@@ -12,6 +12,7 @@ import qs from "qs"
 import {logout} from "./Helpers"
 import Dashboard from "./pages/Startseite/index.js"
 import AddSession from "./pages/Startseite/AddSession.js"
+import JoinSession from "./pages/Startseite/JoinSession.js"
 import Sessionverwalten from "./pages/Sessionverwalten/SessionVerwalten.js"
 import Chat from "./pages/Chat/chatBody/ChatBody.js"
 require('dotenv').config()
@@ -198,6 +199,13 @@ function App() {
       <Route path="/addSession" exact render={(props)=>(
         <>
           <AddSession/>
+        </>
+        
+      )}></Route>
+
+<Route path="/JoinSession" exact render={(props)=>(
+        <>
+          <JoinSession/>
         </>
         
       )}></Route>

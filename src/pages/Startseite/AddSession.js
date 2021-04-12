@@ -2,6 +2,8 @@
 import {useState} from 'react'
 import {Link} from "react-router-dom"
 import Button from "../../components/Button.js"
+import '.././Login/Login.css'
+import Input from "../../components/Input";
 
 
 
@@ -16,14 +18,25 @@ const  handleSubmit = (e) => {
 
 
     return (
+
+      <div className = "container">
+
+
     <form onSubmit = {handleSubmit} >
+      <div className = "form-group">
       <label> Session Name: </label>
-      <input type="text"  required onChange={(e) => setSession(e.target.value)}   />
+      <Input type="text"  required onChange={(e) => setSession(e.target.value)}   />
+      </div>
+
+       <div className = "form-group">
       <label> Session Thema: </label>
-      <input type="text"  required onChange={(e) => setSession(e.target.value)}   />
-      <input type="submit" value= "addSession" />
+      <Input type="text"  required onChange={(e) => setSession(e.target.value)}   />
+      </div>
+      <Button text = "Add Session"class="btn" type="submit" value= "addSession" />
 
       </form>
+
+      </div>
     )
 
 }

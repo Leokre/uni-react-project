@@ -3,6 +3,7 @@ import Session from './Sessions.js'
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 
 
+
 const index = () => {
     return (
         <div>
@@ -14,7 +15,9 @@ const index = () => {
 
 
 <Link to = "/addSession">    <button className="btn1" >  Session erstellen </button>  </Link>
-  <button className="btn1">  Session beitreten </button> 
+<Link to = "/JoinSession">   <button className="btn1" >  Session beitreten </button>  </Link>
+
+
   
   </div>
       

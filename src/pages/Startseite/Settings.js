@@ -13,9 +13,9 @@ import SessionVerwalten from '../SessionVerwalten/SessionVerwalten'
 
 const Settings = () => {
     return (
-        <div className = "fenster" >
+        <div className = "container" >
            
-           
+            
 <SessionVerwalten/>
 
 
