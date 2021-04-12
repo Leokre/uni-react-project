@@ -4,6 +4,11 @@ import Avatar from "./Avatar";
 export default class ChatListItems extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      socket: this.props.socket,
+      currentSession: this.props.currentSession,
+      group:this.props.groupID
+    };
   }
   selectChat = (e) => {
     for (
@@ -14,7 +19,11 @@ export default class ChatListItems extends Component {
       e.currentTarget.parentNode.children[index].classList.remove("active");
     }
     e.currentTarget.classList.add("active");
+    this.state.socket.emit('joinChat',{sessID:this.state.currentSession,groupID:this.state.group})
+    this.props.callback(this.state.group)
   };
+
+
 
   render() {
     return (
