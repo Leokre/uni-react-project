@@ -15,7 +15,7 @@ import AddSession from "./pages/Startseite/AddSession.js"
 import JoinSession from "./pages/Startseite/JoinSession.js"
 import Sessionverwalten from "./pages/Sessionverwalten/SessionVerwalten.js"
 import Chat from "./pages/Chat/chatBody/ChatBody.js"
-
+require('dotenv').config()
 
 function App() {
   const [loggedIn, setloggedIn] = useState(false);
@@ -81,7 +81,9 @@ function App() {
             </Link>
           
                 <Button cssClass="MainMenuButton" text={username} id="profileButton"/>  
+                <Link to="/">
                 <Button cssClass="MainMenuButton" text="Logout" id="logoutButton" onClick={()=>logout(backendURL)}/>
+                </Link>
           </div>      
         </div>
   
@@ -89,7 +91,7 @@ function App() {
         {/*Routing hier*/}
         <Route path="/Chat" exact render={(props)=>(
         <>
-          <Chat />
+          <Chat currentSession="1" currentUser={username}/>
         </>
         )}></Route>
         <Route path="/ProfChatOverview" exact render={(props)=>(
@@ -139,7 +141,7 @@ function App() {
         <Link to="/">
               <Button cssClass="MainMenuButton" text="Home" className="homeButton"/>
         </Link>
-        <Link to="/Chat">
+        <Link to="/Chat" >
               <Button cssClass="MainMenuButton" text="Chat" className="ProfChatOverviewButton"/>
         </Link>
 
@@ -160,7 +162,7 @@ function App() {
         {/*Routing hier*/}
         <Route path="/Chat" exact render={(props)=>(
         <>
-          <Chat />
+          <Chat currentSession="1"/>
         </>
       )}></Route>
         <Route path="/login" exact render={(props)=>(

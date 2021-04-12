@@ -9,11 +9,7 @@ import './Login.css'
 const Register = ({}) => {
     const [username, setUsername] = useState("Username");
     const [password, setPassword] = useState("Password");
-    const [alreadyRegistered, setAlreadyRegistered] = useState(false);
-    const Axios = require("axios")
-    const qs = require("qs")
-    const backendURL = "http://localhost:5000"
-    let success = false;
+    const backendURL = process.env.REACT_APP_BACKEND_URL
 
     
     

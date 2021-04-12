@@ -18,7 +18,7 @@ const Index = ({}) => {
     const [password, setPassword] = useState("Password");
     const [loggedIn, setloggedIn] = useState(false);
     const [alreadyRegistered, setAlreadyRegistered] = useState(loggedIn);
-    const backendURL = "http://localhost:5000"
+    const backendURL = process.env.REACT_APP_BACKEND_URL
     const defaultPassword = "NoPass"
 
     const login = (usr,pwd)=>{
@@ -67,13 +67,7 @@ const Index = ({}) => {
                 <h4>Wie dürfen wir sie nennen?</h4>
                 <Input  state={username} setState={setUsername}/>
                 
-                {/*
-                
-                <Link to="/login/confirmation">
-                <Button text="Login" className="loginButton" onClick={e => callback(username, loggedIn)}/>
-                </Link>
-
-                */}
+               
                 <Button text="Login" className="loginButton" onClick={() => {
                    register(username,defaultPassword,backendURL)
                    setTimeout(()=>{login(username,defaultPassword); }, 100)
