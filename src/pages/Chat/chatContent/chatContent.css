@@ -32,22 +32,22 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    margin-bottom: 15px;
+    margin-bottom: 60px;
     transition: all 0.3s ease;
     transform: scale(0);
     transform-origin: right;
     animation-name: showIn;
-    animation-duration: 0.2s; /* or: Xms */
+    animation-duration: 0.2s; 
     animation-iteration-count: 1;
-    animation-direction: normal; /* or: normal */
+    animation-direction: normal; 
     animation-timing-function: cubic-bezier(
       0.88,
       0.19,
       0.37,
       1.11
-    ); /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-    animation-fill-mode: both; /* or: backwards, both, none */
-    animation-delay: 0.2s; /* or: Xms */
+    ); 
+    animation-fill-mode: both; 
+    animation-delay: 0.2s; 
   }
   @keyframes showIn {
     0% {
@@ -64,12 +64,13 @@
     padding: 1px;
   }
   .chat__item__content {
-    background-color: #4462ff;
+    background-color: #3fa042;
     color: #fff;
     padding: 15px;
     border-radius: 10px 10px 0 10px;
     max-width: 50%;
     min-width: 215px;
+    
   }
   .chat__item__content .chat__meta {
     justify-content: space-between;
@@ -103,7 +104,7 @@
     color: #d1d1d1;
   }
   .content__footer {
-    padding-top: 30px;
+    padding-top: 280px;
   }
   .sendNewMessage {
     background-color: #fff;
@@ -121,7 +122,7 @@
     outline: none;
     cursor: pointer;
     font-size: 16px;
-    color: #4665ff;
+    color: #3fa042;
     padding: 0;
     border-radius: 5px;
     line-height: 36px;
@@ -141,6 +142,6 @@
     outline: none;
   }
   #sendMsgBtn {
-    background-color: #3b5bfe;
+    background-color: #3fa042;
     color: #fff;
   }

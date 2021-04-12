@@ -83,7 +83,13 @@ setSession([...session, {id:'23',thema:session.thema,rolle:'453',datum:'34',extr
 </div>
 
 <div class="table-cell last-cell">
-<Link to = "/Sessionverwalten">   <Button text = "Einstellungen"/>   </Link> 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></link>
+
+
+
+<Link to = "/Sessionverwalten">   <span class="material-icons">settings</span>  </Link> 
+
 </div>   
 
 </div> 

@@ -14,17 +14,17 @@
     flex-direction: column;
     transform: scale(0);
     animation-name: showIn;
-    animation-duration: 0.2s; /* or: Xms */
+    animation-duration: 0.2s; 
     animation-iteration-count: 1;
-    animation-direction: normal; /* or: normal */
+    animation-direction: normal; 
     animation-timing-function: cubic-bezier(
       0.17,
       0.67,
       0.12,
       1.53
-    ); /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-    animation-fill-mode: both; /* or: backwards, both, none */
-    animation-delay: 0.3s; /* or: Xms */
+    ); 
+    animation-fill-mode: both; 
+    animation-delay: 0.3s; 
     margin-bottom: 15px;
   }
   .profile__card.user__profile__image {
@@ -72,17 +72,17 @@
     display: none;
     transform-origin: top;
     animation-name: showIn;
-    animation-duration: 0.2s; /* or: Xms */
+    animation-duration: 0.2s; 
     animation-iteration-count: 1;
-    animation-direction: normal; /* or: normal */
+    animation-direction: normal; 
     animation-timing-function: cubic-bezier(
       0.88,
       0.19,
       0.37,
       1.11
-    ); /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-    animation-fill-mode: both; /* or: backwards, both, none */
-    animation-delay: 0.2s; /* or: Xms */
+    ); 
+    animation-fill-mode: both; 
+    animation-delay: 0.2s; 
   }
   .profile__card.open .card__content {
     display: block;

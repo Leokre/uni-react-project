@@ -5,6 +5,11 @@ import {useState} from 'react'
 import SchnellAntwort from "./Schnellantwort"
 import Gruppe from "./GruppeErstellen"
 import Participents from "./Participents"
+import Einladungslink from "./Einladungslink"
+import  './SessionVerwalten.css'
+
+
+
 
 
 
@@ -44,14 +49,20 @@ const SessionVerwalten = () => {
 
 
 return (
-    <div>
+
+  
+    <div className  = "cont">
+
+      <form>
             <Router>
+              
             <h1>Session Verwalten</h1> 
-            <Button text="Rechtevergabe" cssClass= "btn"/>
+            <Button text="Rechtevergabe" />
+            
             <br></br>
             <br></br>
             <Link to= '/Gruppe'>
-            <Button text="Gruppenverwaltung" cssClass= "btn"/>
+            <Button text="Gruppenverwaltung" />
              </Link>
 
              <Route path="/Gruppe" exact render={(props)=>(<>
@@ -61,7 +72,14 @@ return (
              
             <br></br>
             <br></br>
-            <Button text="Einladungslink generieren" cssClass= "btn"/>
+          <Link to = "/einladungslink"> <Button text="Einladungslink generieren" cssClass= "btn"/>  </Link>
+          <Route path="/einladungslink" exact render={(props)=>(<>
+      <br> </br>  
+      <Einladungslink/>
+       
+    </> )}></Route>
+
+
             <br></br>
             <br></br>
             <Link to= '/Schnellantworten'>
@@ -86,7 +104,7 @@ return (
 
             <Participents participents = {participents} onDelete ={deleteParticipent}/>
             </Router>
-    
+            </form>
     </div>
     
 )

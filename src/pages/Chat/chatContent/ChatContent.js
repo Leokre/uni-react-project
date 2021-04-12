@@ -100,16 +100,19 @@ export default class ChatContent extends Component {
           <div className="sendNewMessage">
             <button className="addFiles">
               <i className="fa fa-plus"></i>
-            </button>
+            </button>  
+
+          
             <input
               type="text"
-              placeholder="Type a message here"
+              placeholder="Nachricht hier eintippen.."
               onChange={this.onStateChange}
               value={this.state.msg}
             />
             <button className="btnSendMsg" id="sendMsgBtn">
               <i className="fa fa-paper-plane"></i>
             </button>
+            
           </div>
         </div>
       </div>
