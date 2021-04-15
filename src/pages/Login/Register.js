@@ -4,6 +4,7 @@ import { useState} from "react";
 import {Link} from "react-router-dom"
 import {register} from "../../Helpers"
 import './Login.css'
+import Bild from './Login.png'
 
 
 const Register = ({}) => {
@@ -14,10 +15,15 @@ const Register = ({}) => {
     
     
     return (
+<div>
+
+
         <div class = "container">
+
+
            
 <form>
-
+<img src = {Bild} className="Bild"></img>
 <h1>Registrierung</h1>
 
             <div class= "form-group">
@@ -38,6 +44,7 @@ const Register = ({}) => {
 
                 </form>
                 
+        </div>
         </div>
     )
 }

@@ -6,6 +6,7 @@ import Axios from "axios"
 import qs from "qs"
 import {register} from "../../Helpers"
 import "./Login.css"
+import Bild from './Login.png'
 /*
 
 isLoggedIn is not set properly
@@ -62,7 +63,7 @@ const Index = ({}) => {
             <div class = "container">
                 
 <form >
-
+<img src = {Bild} className="Bild"></img>
                 <h1>Willkommen auf unserer Plattform</h1>
                 <h4>Wie dürfen wir sie nennen?</h4>
                 <Input  state={username} setState={setUsername}/>

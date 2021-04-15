@@ -3,10 +3,15 @@
 
 
 .container{
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4%;
 
-margin: auto;
 width: 700px;
 max-width: 90%;
+
+
 
 
 }
@@ -30,6 +35,7 @@ margin-bottom: 24px;
 color: #222222;
 font-family:  'Lucida Sans Unicode';
 
+
 }
 
 .container form h4{
@@ -43,7 +49,6 @@ font-family:  'Lucida Sans Unicode';
 
 
 .container form .form-control {
-
 width: 100%;
 height: 40px;
 background: white;
@@ -78,3 +83,12 @@ transition: .3s;
     opacity: 0.7 ;
 }
 
+.Bild{
+
+    height: 350px;
+    width: 550px;
+
+    
+    
+
+}
