@@ -67,7 +67,7 @@ setSession([...session, {id:'23',thema:session.thema,rolle:'453',datum:'34',extr
 
     {session.map((element)  => (
 
-    <div class="table-row">
+<div class="table-rows" onClick= {() => {window.location.pathname = "./Sessionverwalten"}}>
 
 <div class="table-cell first-cell">
     <p>{element.id}</p>
