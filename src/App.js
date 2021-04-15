@@ -13,8 +13,12 @@ import {logout} from "./Helpers"
 import Dashboard from "./pages/Startseite/index.js"
 import AddSession from "./pages/Startseite/AddSession.js"
 import JoinSession from "./pages/Startseite/JoinSession.js"
+import Home from "./pages/Home/index.js"
+import Profil from "./pages/Profilseite/PersönlicheInfos/index.js"
+import SchnellAntwort from "./pages/Profilseite/Schnellantworten/index.js"
 import Sessionverwalten from "./pages/Sessionverwalten/SessionVerwalten.js"
 import Chat from "./pages/Chat/chatBody/ChatBody.js"
+
 require('dotenv').config()
 
 function App() {
@@ -80,7 +84,11 @@ function App() {
                   <Button cssClass="MainMenuButton" text="Dashboard" />
             </Link>
           
-                <Button cssClass="MainMenuButton" text={username} id="profileButton"/>  
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"></link>
+
+
+              <Link to = "/meinprofil/infos"><Button cssClass="MainMenuButton" text={username}  id="profileButton"/>  </Link> 
                 <Link to="/">
                 <Button cssClass="MainMenuButton" text="Logout" id="logoutButton" onClick={()=>logout(backendURL)}/>
                 </Link>
@@ -89,6 +97,17 @@ function App() {
   
         
         {/*Routing hier*/}
+
+        <Route path="/Sessionverwalten" exact render={(props)=>(
+        <>
+         <Sessionverwalten/>
+        </>
+        
+      )}></Route>
+      
+
+
+
         <Route path="/Chat" exact render={(props)=>(
         <>
           <Chat currentSession="1" currentUser={username}/>
@@ -119,8 +138,48 @@ function App() {
         </>
         
       )}></Route>
+
+<Route path="/meinprofil/infos" exact render={(props)=>(
+        <>
+          <Profil />
+        </>
+        
+      )}></Route>
+
+
+<Route path="/meinprofil/schnellantworten" exact render={(props)=>(
+        <>
+          <SchnellAntwort />
+        </>
+        
+      )}></Route>
       
-  
+
+
+<Route path="/" exact render={(props)=>(
+        <>
+          <Home/>
+        </>
+        
+      )}></Route>
+
+
+<Route path="/addSession" exact render={(props)=>(
+        <>
+          <AddSession/>
+        </>
+        
+      )}></Route>
+
+<Route path="/JoinSession" exact render={(props)=>(
+        <>
+          <JoinSession/>
+        </>
+        
+      )}></Route>
+
+
+      
   
   
         
@@ -209,6 +268,15 @@ function App() {
         </>
         
       )}></Route>
+
+
+<Route path="/" exact render={(props)=>(
+        <>
+          <Home/>
+        </>
+        
+      )}></Route>
+      
       
   
   
