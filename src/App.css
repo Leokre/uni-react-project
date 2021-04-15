@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+
+
+.MainMenu{
+  height: 6.8vh;
+  width: 99%;
+  padding: 0px;
+  margin:0px;
+  background-color:#242424;
+  border:10px solid #242424;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.MainMenuButton{
+    background-color:#242424; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration:none;
+    display: inline-block;
+    font-size: 16px;
+    border:1px solid #242424;
+  
+}
+#loginButton{
+  background-color: #3fa042;
+  
+}
+#logoutButton{
+  background-color: #ac2929;
+}
+.Buttons{
+  float:right;
+}
+#userCardProfilePic{
+  float:left;
+}
+#userCardUserName{
+  float:right;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
