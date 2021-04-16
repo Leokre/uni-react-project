@@ -104,7 +104,7 @@
     color: #d1d1d1;
   }
   .content__footer {
-    padding-top: 280px;
+    padding-top: 100px;
   }
   .sendNewMessage {
     background-color: #fff;
@@ -146,3 +146,60 @@
     background-color: #3fa042;
     color: #fff;
   }
+
+
+
+ .functionbar{
+  display:inline-flex
+  
+  
+  }
+
+ .popbutton2{
+
+
+    width: 440px;
+    height: 45px;
+    border: none;
+    outline: none;
+    background: #f4f3f8;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(73, 73, 73);
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border: 2px solid #ebe7fb ;
+
+  }
+  .popbutton1{
+
+
+    width: 440px;
+    height: 45px;
+    border: none;
+    background: #f4f3f8;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(73, 73, 73);
+    border: 2px solid#ebe7fb ;
+
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+
+  }
+
+  .popbutton1:hover {
+
+opacity: 0.9;
+background: #ebe7fb
+
+  }
+
+  .popbutton2:hover {
+
+    opacity: 0.9;
+    background: #ebe7fb
+    
+      }
