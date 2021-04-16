@@ -4,6 +4,7 @@ import {useState} from 'react'
 import {Link} from "react-router-dom"
 import '.././Login/Login.css'
 import Input from "../../components/Input";
+import Bild from './Join.png'
 
 const SupportSessionBeitreten  = ({onAdd}) => {
 const[sessionID,setID] = useState(null)
@@ -43,7 +44,7 @@ alert('  Session :'+ password)
         <div className = "container">
            
            <form>
-
+           <img src = {Bild} className="Bild"></img>
                <div className = "form-group">
                 <label>SessionID</label>
                 <Input type ="text" placeholder = "Add-SessionID"  value = {sessionID} 
