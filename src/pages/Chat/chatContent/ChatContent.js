@@ -232,13 +232,15 @@ export default class ChatContent extends Component {
             <div ref={this.messagesEndRef} />
           </div>
         </div>
-        <FunctionBar quickReplies={this.props.quickReplies} callback={this.quickReplyCallback}/>
+       
         <div className="content__footer">
+          
+        <FunctionBar quickReplies={this.props.quickReplies} callback={this.quickReplyCallback}/>
           <div className="sendNewMessage">
             <button className="addFiles"  >
               <i className="fa fa-plus"></i>
             </button>  
-
+           
           
             <input
               type="text"
