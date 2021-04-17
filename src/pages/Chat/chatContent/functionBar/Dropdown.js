@@ -1,7 +1,10 @@
 import {useState} from "react"
+import '../popup.css'
+import Popup from '../Popup.js'
 
-const Dropdown = ({title,items=[],multiSelect = false,callback,autoClose}) => {
-const [open,setOpen] = useState(false);
+
+const Dropdown = ({title,items=[],multiSelect = false,callback,autoClose, className}) => {
+const [open,setOpen] = useState(true);
 const [selection,setSelection] = useState([]);
 const toggle = ()=> setOpen(!open)
 
@@ -25,9 +28,10 @@ const handleOnClick = (item)=>{
             tabIndex={0} 
             role="button" 
             onKeyPress={()=>toggle()} 
-            onClick={()=>toggle()}>
+           /* onClick={()=>toggle() }*/>
                 <div className="dd-header__title">
-                    <p className="dd-header__title--bold">{title}</p>
+                    <h2 className="headerpop">Schnellantworten öffnen  </h2>
+                    
                 </div>
                 <div className="dd-header__action">
                   
@@ -37,7 +41,7 @@ const handleOnClick = (item)=>{
                 <ul className="dd-list">
                     {items.map(item=>(
                         <li className="dd-list-item" key={item.id}  > 
-                            <button type="button" onClick={()=> handleOnClick(item)}>
+                            <button className ="buttondrop" type="button" onClick={()=> handleOnClick(item)}>
                                 <span>{item.value}</span>
                             </button>
                         </li>

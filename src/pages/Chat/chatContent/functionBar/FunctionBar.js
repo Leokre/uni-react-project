@@ -1,5 +1,5 @@
 import Button from "../../../../components/Button"
-import Dropdown from "../../../../components/Dropdown"
+import Dropdown from "./Dropdown"
 import '../chatContent.css'
 import Popup from '../Popup.js'
 import '../chatContent.css'
