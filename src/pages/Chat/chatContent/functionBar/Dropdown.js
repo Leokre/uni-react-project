@@ -28,9 +28,9 @@ const handleOnClick = (item)=>{
             tabIndex={0} 
             role="button" 
             onKeyPress={()=>toggle()} 
-           /* onClick={()=>toggle() }*/>
+            onClick={()=>toggle()  }>
                 <div className="dd-header__title">
-                    <h2 className="headerpop">Schnellantworten öffnen  </h2>
+                    <h2 className="headerpop">Schnellantworten öffnen</h2>
                     
                 </div>
                 <div className="dd-header__action">
