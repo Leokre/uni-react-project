@@ -60,7 +60,7 @@
   .chat__item .avatar {
     margin-right: 0px;
     margin-left: 20px;
-    background: #fff;
+    background: blue;
     padding: 1px;
   }
   .chat__item__content {
@@ -84,6 +84,7 @@
   }
   .chat__msg {
     user-select: none;
+    word-wrap: break-word;
   }
   
   .chat__item.other {

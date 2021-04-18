@@ -22,6 +22,8 @@
        grid-area: Comp2;
        width: 400px;
        height: 500px;
+       
+     
      }
 
      .compbild2 {
@@ -30,8 +32,9 @@
 
      }
   .Comp3 { grid-area: Comp3; 
-    background-color: coral;
+    
     text-align: center;
+    
      
 }
 
@@ -50,26 +53,36 @@ font-size: 15px;
     }
   .Comp4 { 
       grid-area: Comp4; 
-      background-color: cyan;
+     
       height: 300px;
+      text-align: center;
+      margin-top: 20px;
     }
       
 
   .Comp5 {
        grid-area: Comp5;
-    background-color: darkblue;
+       
+    
     height: 300px;
+    text-align: center;
+    margin-top: 20px;
 }
   .Comp6 {
        grid-area: Comp6;
-       background-color: darkorchid;
+       
+       
        height: 300px;
+       text-align: center;
+       margin-top: 20px;
     
     }
   .Comp7 {
        grid-area: Comp7; 
-    
-    background-color: darkslategray;
+       
+    margin-top: 20px;
+       text-align: center;
     height: 300px;
+    
 
 }
