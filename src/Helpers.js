@@ -53,5 +53,5 @@ export function register(usr,pwd,backendURL){
   }
 
   export function msgTimeFromTimestamp(timestamp){
-
+    return (timestamp *1000).toFixed.getTime()
   }

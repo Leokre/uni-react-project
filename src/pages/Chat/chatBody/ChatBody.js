@@ -25,7 +25,7 @@ export default class ChatBody extends Component {
       currentSession: props.currentSession,
       userGroups: "",
       currentGroup: 0,
-      quickReplies: ""
+      quickReplies: props.quickReplies
       
     };
   }
@@ -37,28 +37,7 @@ export default class ChatBody extends Component {
     
   }
 
-  getQuickReplies = () =>{
-    const log = Axios.create({
-      withCredentials: true
-    })
-    log.get(backendURL +"/getQuickReplies").then(response => {
-        console.log(response.data)
-        let replies = []
-        let i = 0;
-        response.data.forEach(reply => {
-          replies.push(
-            {
-              id:i++,
-              value:reply
-            })
-        })
-  
-        this.setState({      quickReplies: replies    });
-  
-        
-        
-    })
-  }
+
 
   getUserGroups (sessID){
 
@@ -99,7 +78,6 @@ export default class ChatBody extends Component {
   componentDidMount() {
     console.log("currentSession: " + this.props.currentSession)
     this.getUserGroups(this.state.currentSession)
-    this.getQuickReplies()
     socket.emit('joinChat',{sessID:this.state.currentSession,groupID:0})
     
   }

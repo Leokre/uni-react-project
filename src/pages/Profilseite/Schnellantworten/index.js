@@ -4,20 +4,20 @@ import Sidebar from './Sidebar.js'
 import SchnellAntwort from './Input.js'
 
 
-const index = () => {
+const index = ({quickReplies}) => {
     return (
         <div className="profil">
  
 
-<form >
+
 
     
-    <Sidebar/>
+    <Sidebar quickReplies={quickReplies}/>
 
     
 
   
-</form>
+
 
 
 

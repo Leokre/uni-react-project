@@ -1,5 +1,5 @@
 import './App.css';
-import { useRef,createRef } from "react"
+import { useRef,createRef,useEffect} from "react"
 import {BrowserRouter as Router,Route,Link,useLocation} from 'react-router-dom'
 import {default as Login} from "./pages/Login/Index"
 import Register from "./pages/Login/Register"
@@ -23,6 +23,7 @@ require('dotenv').config()
 function App() {
   const [loggedIn, setloggedIn] = useState(false);
   const [username, setUsername] = useState("");
+  const [quickReplies, setquickReplies] = useState("");
   const backendURL="http://localhost:5000"
   
 
@@ -52,19 +53,56 @@ function App() {
   
   }
 
+
+  const getQuickReplies = () =>{
+    if(!loggedIn) return
+    console.log("Getting quick replies...")
+    const rep = Axios.create({
+      withCredentials: true
+    })
+    rep.get(backendURL +"/getQuickReplies").then(response => {
+        console.log(response.data)
+        let replies = []
+        let i = 0;
+        if(!response.data) return
+        response.data.forEach(reply => {
+          replies.push(
+            {
+              id:i++,
+              value:reply
+            })
+        })
+  
+        setquickReplies(replies)
+  
+        
+        
+    })
+  }
+
+  useEffect(()=>{
+    if(!quickReplies) getQuickReplies();
+  })
+  
+  
+
   if(!loggedIn){
     checkAuth();
   }
   
   if(loggedIn){
+    
+    
     return loggedInMenu()
   }else{
     return loggedOutMenu()
   }
 
-
   {/*Hier ist das Menü für eingeloggte Nutzer*/}
   function loggedInMenu(){
+
+
+
     return (
       <Router>
       <div className="App">
@@ -107,7 +145,7 @@ function App() {
 
         <Route path="/Chat" exact render={(props)=>(
         <>
-          <Chat currentSession={props.location.state.currentSession} currentUser={username}/>
+          <Chat currentSession={props.location.state.currentSession} currentUser={username} quickReplies={quickReplies}/>
         </>
         )}></Route>
 
@@ -143,7 +181,7 @@ function App() {
 
 <Route path="/meinprofil/schnellantworten" exact render={(props)=>(
         <>
-          <SchnellAntwort />
+          <SchnellAntwort quickReplies={quickReplies}/>
         </>
         
       )}></Route>
@@ -211,11 +249,7 @@ function App() {
         </div>
         
         {/*Routing hier*/}
-        <Route path="/Chat" exact render={(props)=>(
-        <>
-          <Chat currentSession="1"/>
-        </>
-      )}></Route>
+
         <Route path="/login" exact render={(props)=>(
         <>
           <Login />
