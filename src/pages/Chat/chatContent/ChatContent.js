@@ -62,9 +62,9 @@ export default class ChatContent extends Component {
     this.setState({msg: reply})
     this.sendMessage(reply);
   }
-
+ 
   scrollToBottom = () => {
-    this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+     this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
 
@@ -97,7 +97,7 @@ export default class ChatContent extends Component {
             }else{
               console.log("Message log:")
               console.log(response.data)
-              let chatLog = []
+              let chatLog = []       
               response.data.forEach(element=>{
                 let newMessage = 
                 {
@@ -177,8 +177,8 @@ export default class ChatContent extends Component {
 
       this.setState({ chat: newChatLog });
 
+    if(this.messagesEndRef.current) this.scrollToBottom();
     
-    this.scrollToBottom();
   })
 
 
@@ -186,7 +186,8 @@ export default class ChatContent extends Component {
     window.addEventListener("keydown", (e) => {
       if (e.keyCode == 13) {
         this.sendMessage()
-        this.scrollToBottom();
+        if(this.messagesEndRef.current != null) this.scrollToBottom();
+        
       }
     });
     

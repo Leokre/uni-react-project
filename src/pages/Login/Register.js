@@ -18,7 +18,7 @@ const Register = ({}) => {
 <div>
 
 
-        <div class = "container">
+        <div className = "container">
 
 
            
@@ -26,12 +26,12 @@ const Register = ({}) => {
 <img src = {Bild} className="Bild"></img>
 <h1>Registrierung</h1>
 
-            <div class= "form-group">
+            <div className= "form-group">
                 <label>Nutzername</label>
                 <Input  state={username} setState={setUsername}/>
 
                 </div>
-                <div class= "form-group">
+                <div className= "form-group">
                 <label>Passwort</label>
                 <Input state={password} setState={setPassword}/>
 
@@ -40,7 +40,7 @@ const Register = ({}) => {
 
            
 
-                <Button text="Register" Class="btn" onClick={()=>register(username,password,backendURL)} />
+                <Button text="Register" cssClass="btn" onClick={()=>register(username,password,backendURL)} />
 
                 </form>
                 
