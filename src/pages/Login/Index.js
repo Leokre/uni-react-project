@@ -43,16 +43,17 @@ const Index = ({}) => {
                 if(!response.data){
                    setloggedIn(false);
                 }else{
-                    //console.log(response.data)
-                    //console.log(response.data.accessToken)
-                    setloggedIn(true);
-                    //console.log(loggedIn)
-                    window.location.reload();
+                   setloggedIn(response.data.auth)
+                    
+                   if(response.data.msg == "UserNamePasswordError") alert("Username oder Passwort sind falsch")
+                    
+                   window.location.reload();
+                    
 
                     
                 }
               
-          }).then(setloggedIn(true))
+          })
       }
 
      
@@ -60,7 +61,7 @@ const Index = ({}) => {
 
     if(!alreadyRegistered){
         return (
-            <div class = "container">
+            <div className = "container">
                 
 <form >
 <img src = {Bild} className="Bild"></img>

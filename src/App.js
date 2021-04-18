@@ -1,16 +1,15 @@
 import './App.css';
 import { useRef,createRef } from "react"
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Link,useLocation} from 'react-router-dom'
 import {default as Login} from "./pages/Login/Index"
 import Register from "./pages/Login/Register"
-import {default as ProfChatOverview} from "./pages/ProfChatOverview/Index"
 import Confirmation from "./pages/Login/Confirmation"
 import Button from "./components/Button"
 import Axios from "axios"
 import {useState} from "react"
 import qs from "qs"
 import {logout} from "./Helpers"
-import Dashboard from "./pages/Startseite/index.js"
+import Dashboard from "./pages/Startseite/Index.js"
 import AddSession from "./pages/Startseite/AddSession.js"
 import JoinSession from "./pages/Startseite/JoinSession.js"
 import Home from "./pages/Home/index.js"
@@ -76,9 +75,7 @@ function App() {
             <Link to="/">
                   <Button cssClass="MainMenuButton" text="Home" className="homeButton"/>
             </Link>
-            <Link to="/Chat">
-              <Button cssClass="MainMenuButton" text="Chat" className="ProfChatOverviewButton"/>
-            </Link>
+
 
             <Link to="/dashboard">
                   <Button cssClass="MainMenuButton" text="Dashboard" />
@@ -110,14 +107,11 @@ function App() {
 
         <Route path="/Chat" exact render={(props)=>(
         <>
-          <Chat currentSession="1" currentUser={username}/>
+          <Chat currentSession={props.location.state.currentSession} currentUser={username}/>
         </>
         )}></Route>
-        <Route path="/ProfChatOverview" exact render={(props)=>(
-        <>
-          <ProfChatOverview />
-        </>
-      )}></Route>
+
+
         <Route path="/login" exact render={(props)=>(
         <>
           <Login />
@@ -127,7 +121,7 @@ function App() {
 
 <Route path="/dashboard" exact render={(props)=>(
         <>
-          <Dashboard />
+          <Dashboard username={username}/>
         </>
         
       )}></Route>
@@ -200,9 +194,7 @@ function App() {
         <Link to="/">
               <Button cssClass="MainMenuButton" text="Home" className="homeButton"/>
         </Link>
-        <Link to="/Chat" >
-              <Button cssClass="MainMenuButton" text="Chat" className="ProfChatOverviewButton"/>
-        </Link>
+
 
         <Link to="/dashboard">
                   <Button cssClass="MainMenuButton" text="Dashboard" />
