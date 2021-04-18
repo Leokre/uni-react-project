@@ -9,7 +9,7 @@ const index = () => {
         <div className="profil">
  
 
-<form >
+<form>
 
     
     <Sidebar/>
