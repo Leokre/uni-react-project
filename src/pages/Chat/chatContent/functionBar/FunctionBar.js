@@ -22,7 +22,7 @@ const FunctionBar = ({quickReplies,callback}) => {
     return (
         <div className = "functionbar">
             <Button  cssClass = "popbutton2"onClick = {() => setButtonPopupA(true)} text ="Schnellantwort"/>
-            <Popup trigger = {buttonPopupA} setTrigger ={setButtonPopupA}> <Dropdown title="Schnellantwort" items={quickReplies} callback={callback} autoClose={true}/></Popup>
+            <Popup trigger = {buttonPopupA} setTrigger ={setButtonPopupA}> <Dropdown title="Schnellantwort" items={quickReplies} callback={callback}  fclose = {setButtonPopupA} autoClose={true}/></Popup>
            
 
 
