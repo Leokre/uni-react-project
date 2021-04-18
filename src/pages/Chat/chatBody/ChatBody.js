@@ -97,6 +97,7 @@ export default class ChatBody extends Component {
   
 
   componentDidMount() {
+    console.log("currentSession: " + this.props.currentSession)
     this.getUserGroups(this.state.currentSession)
     this.getQuickReplies()
     socket.emit('joinChat',{sessID:this.state.currentSession,groupID:0})

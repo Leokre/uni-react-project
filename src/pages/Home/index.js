@@ -5,6 +5,7 @@ import Bild from './Home.png'
 const index = () => {
     return (
 
+
         <div class="grid-container">
   
         <div class="Comp1">Wilkommen auf dem Chat Portal der TH-KÖLN. </div>
@@ -15,6 +16,7 @@ const index = () => {
         <div class="Comp6"><h2>Schnellantworten</h2><br></br>Sie können als Professor schnellantworten vordefinieren die dazu dienen mit einem Klick die Studenten unter Zeitdruck zu benachrichtigen </div>
         <div class="Comp7"><h2>Teilnehmer und Gruppen Verwalten</h2><br></br>Teilnehmer und Gruppen können hinzugefügt und auch entfernt werden. Diese kann man auch Rechte vergeben.  </div>
       </div>
+
 
 
        

@@ -1,37 +1,71 @@
 import Button from "../../components/Button";
 import React from 'react'
 import {useState} from 'react'
-import {Link} from "react-router-dom"
+import {Link,Redirect} from "react-router-dom"
 import '.././Login/Login.css'
 import Input from "../../components/Input";
 import Bild from './Join.png'
+import Axios from "axios"
+import qs from "qs"
 
-const SupportSessionBeitreten  = ({onAdd}) => {
-const[sessionID,setID] = useState(null)
-const[password,setpassword] = useState('')
+const backendURL = process.env.REACT_APP_BACKEND_URL
+const SupportSessionBeitreten  = () => {
+const[inviteCode,setinviteCode] = useState("")
 //const[sessubmitsion,setsubmitSession] = useState(false)
 
 
 
+const joinSess = async (inviteCode)=>{
 
+    console.log("Joining...")
+    const join = Axios.create({
+        withCredentials: true
+      })
+
+      join({
+          method: 'post',
+          url: backendURL+"/Session/addUser",
+          data: qs.stringify({
+            inviteCode: inviteCode
+          }),
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+          }
+        }).then(response => {
+            console.log(response)
+            if(!response.data){
+               
+            }else{
+               
+                console.log("JoinResponse: " + response.data)
+
+                
+            }
+          
+      })
+}
 
 const onSubmit = (e)=>{
 e.preventDefault()
 
-if(!sessionID){
+if(!inviteCode){
    
-    alert('Bitte geben Sie ein Thema ein!' );
+    alert('Bitte geben Sie einen Einladungscode ein!' );
 
     return
 } 
-alert('SessionID:'+ sessionID)
+//alert('inviteCode:'+ inviteCode)
 
-alert('  Session :'+ password)
+joinSess(inviteCode)
+
+setinviteCode('')
 
 
 
- setID('')
- setpassword('')
+
+
+
+
  //setsubmitSession(false)
     
 
@@ -46,26 +80,22 @@ alert('  Session :'+ password)
            <form>
            <img src = {Bild} className="Bild"></img>
                <div className = "form-group">
-                <label>SessionID</label>
-                <Input type ="text" placeholder = "Add-SessionID"  value = {sessionID} 
-                onChange={(e)=> setID(e.target.value)} />
+                <label>Einladungscode</label>
+                <Input type ="text" placeholder = "Add-SessionID"  value = {inviteCode} 
+                state={inviteCode}  setState={setinviteCode} />
                 </div>
         
         
           
-                <div className = "form-group" >
-                <label>Name der Session</label>
-                <Input type ="text"  placeholder = "Add-password"  
-                value = {password} 
-                onChange={(e)=> setpassword(e.target.value)}  />
+        
 
-</div>
+
 
                        
         
-            <Link to="/JoinSession/success">
-            <Button text="Session Beitreten" cssClass="btn" onClick={()=> onAdd(sessionID,password)}/>
-            </Link>
+            
+            <Button text="Session Beitreten" cssClass="btn" onClick={onSubmit}/>
+            
             
 
             </form>
