@@ -38,7 +38,7 @@ const  handleSubmit = (e) => {
           'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
         }
       }).then(response => {
-          //console.log(response)
+          console.log(response)
           if(!response.data){
              console.log("REQUEST FAILED")
           }else{

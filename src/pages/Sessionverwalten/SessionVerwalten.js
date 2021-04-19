@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Route,Link } from 'react-router-dom'
 import {useState} from 'react'
 import SchnellAntwort from "./Schnellantwort"
 import Gruppe from "./GruppeErstellen"
-import Participents from "./Participents"
+import Participents from "./Gruppenmitglieder/Participents"
 import Einladungslink from "./Einladungslink"
 import  './SessionVerwalten.css'
 

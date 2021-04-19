@@ -1,0 +1,199 @@
+
+.con{
+    width: 100vw;
+    height: 95vh;
+    display: grid;
+  grid-template-columns: 0fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "sideboard content content content"
+    "sideboard content content content"
+    "sideboard content content content";
+}
+
+
+
+.Sidebar  {
+grid-area: sideboard;
+height: 100%;
+width: 300px;
+background-color:#242424;
+
+}
+
+
+
+
+.SidebarList {
+
+
+height:auto ;
+padding: 0;
+width: 100%;
+
+}
+
+
+.SidebarList .row {
+
+
+    width: 100%;
+    height: 70px;
+    background-color: #242424;
+    
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.SidebarList .row:hover{
+
+    cursor: pointer;
+    background-color:#2e2d2d;
+
+
+}
+
+
+
+
+
+
+
+.row #icon {
+
+flex: 30%;
+place-items: center;
+display: grid;
+
+}
+
+.row #title {
+
+    flex: 70%;
+    
+    }
+
+
+
+    .rowtitle{
+
+
+        width: 100%;
+        height: 70px;
+        background-color: #242424;
+        
+        list-style-type: none;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #ebe7fb;
+        border-top: 1px solid #ebe7fb;
+        font-size: 20px;
+    
+
+    }
+
+
+
+
+    .content2 {
+
+        grid-area: content;
+        margin: auto;
+        width: 700px;
+        max-width: 90%;
+        align-self: center;
+                align-items: center;
+
+        }
+
+
+
+    
+            
+            .content2 form{
+            
+            
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background: white;
+            
+            }
+        
+
+            .content2 html .form-control {
+
+                width: 100%;
+                height: 40px;
+                background: white;
+                border-radius: 4px;
+                border: 1px solid silver;
+                margin: 10px 0 18px 0;
+                
+                
+                
+                }
+                
+                .content2 html .btn{
+                
+                
+                width: 635px;
+                height: 45px;
+                border: none;
+                outline: none;
+                background: #3fa042;
+                cursor: pointer;
+                font-size: 16px;
+                text-transform: uppercase;
+                color: white;
+                border-radius: 4px;
+                transition: .3s;
+                
+                
+            }
+
+            .content2 html .btn:hover{
+                opacity: 0.7 ;
+            }
+            
+    
+                
+
+
+           .content2 html .h1 {
+
+            
+            margin-bottom: 5px;
+            color: #222222;
+            font-size: 14px;
+            font-family:  'Lucida Sans Unicode';
+
+                }
+
+                .content2 html .h2 {
+
+            
+                    margin-bottom: 5px;
+                    color: #222222;
+                    font-size: 18px;
+                    font-family:  'Lucida Sans Unicode';
+                    margin-bottom: 100px;
+                    text-align: center;
+                    border-bottom:1px solid grey;
+        
+                        }
+        
+        
+

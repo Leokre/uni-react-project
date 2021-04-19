@@ -15,7 +15,8 @@ import JoinSession from "./pages/Startseite/JoinSession.js"
 import Home from "./pages/Home/index.js"
 import Profil from "./pages/Profilseite/PersönlicheInfos/index.js"
 import SchnellAntwort from "./pages/Profilseite/Schnellantworten/index.js"
-import Sessionverwalten from "./pages/Sessionverwalten/SessionVerwalten.js"
+import Gruppenmitglied from "./pages/Sessionverwalten/Gruppenmitglieder/index.js"
+import Einladungslink from "./pages/Sessionverwalten/Einladungslink/index.js"
 import Chat from "./pages/Chat/chatBody/ChatBody.js"
 
 require('dotenv').config()
@@ -95,9 +96,16 @@ function App() {
         
         {/*Routing hier*/}
 
-        <Route path="/Sessionverwalten" exact render={(props)=>(
+        <Route path="/sessionverwalten/gruppenmitglied" exact render={(props)=>(
         <>
-         <Sessionverwalten/>
+         <Gruppenmitglied/>
+        </>
+        
+      )}></Route>
+
+<Route path="/sessionverwalten/einladungslink" exact render={(props)=>(
+        <>
+         <Einladungslink/>
         </>
         
       )}></Route>
@@ -239,13 +247,19 @@ function App() {
         
       )}></Route>
 
-<Route path="/Sessionverwalten" exact render={(props)=>(
+<Route path="/sessionverwalten/gruppenmitglied" exact render={(props)=>(
         <>
-         <Sessionverwalten/>
+         <Gruppenmitglied/>
         </>
         
       )}></Route>
-      
+
+<Route path="/sessionverwalten/einladungslink" exact render={(props)=>(
+        <>
+         <Einladungslink/>
+        </>
+        
+      )}></Route>
 
       <Route path="/addSession" exact render={(props)=>(
         <>
