@@ -7,6 +7,7 @@ import Axios from "axios"
 import qs from "qs"
 import FunctionBar from "./functionBar/FunctionBar";
 import SendIcon from '@material-ui/icons/Send';
+import {msgTimeFromTimestamp} from "../../../Helpers"
 const backendURL = process.env.REACT_APP_BACKEND_URL
 var i = 1
   
