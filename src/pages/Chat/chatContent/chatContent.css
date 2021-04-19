@@ -2,7 +2,9 @@
     flex-grow: 1;
     padding: 15px 40px;
     max-width: 63%;
-    border-right: 1px solid #ebe7fb;
+    height: 100vh;
+    
+
   }
   .content__header {
     padding-bottom: 15px;
@@ -27,7 +29,17 @@
   .content__body {
     max-height: calc(100vh - calc(100vh / 2));
     overflow: auto;
+    
+
+
   }
+
+  .content__body .chatbox {
+    height: 100vh;
+
+  }
+
+
   .chat__item {
     display: flex;
     justify-content: flex-end;
@@ -40,6 +52,7 @@
     animation-duration: 0.2s; 
     animation-iteration-count: 1;
     animation-direction: normal; 
+   
     animation-timing-function: cubic-bezier(
       0.88,
       0.19,
@@ -70,6 +83,7 @@
     border-radius: 10px 10px 0 10px;
     max-width: 50%;
     min-width: 215px;
+    
     
   }
   .chat__item__content .chat__meta {
@@ -106,6 +120,7 @@
   }
   .content__footer {
     padding-top: 100px;
+ 
   }
   .sendNewMessage {
     background-color: #fff;
@@ -145,6 +160,7 @@
   }
   #sendMsgBtn {
     background-color: #3fa042;
+    
     color: #fff;
   }
 

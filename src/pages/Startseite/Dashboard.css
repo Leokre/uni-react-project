@@ -42,7 +42,6 @@
   }
   
   .btn1:before{
-  
   transition: 0.5s all ease;
   position: absolute;
   top: 0;
@@ -52,12 +51,10 @@
   opacity: 0;
   content: "";
   background-color: #3fa042;
-  
   }
   
   
   .btn1:hover:before{
-  
     transition: 0.5 all ease;
     left: 0;
     right: 0;
@@ -72,11 +69,14 @@
     margin: 0;
     padding: 0;
   }
+
+
   .table-box
   {
     margin: 50px auto;
-    
   }
+
+
   
   .table-row{
     display: table;

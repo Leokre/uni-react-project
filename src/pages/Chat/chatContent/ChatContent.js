@@ -10,23 +10,23 @@ import SendIcon from '@material-ui/icons/Send';
 import {msgTimeFromTimestamp} from "../../../Helpers"
 const backendURL = process.env.REACT_APP_BACKEND_URL
 var i = 1
-  
 
 
 
 export default class ChatContent extends Component {
   messagesEndRef = createRef(null);
-  chatItms = [
+ /*chatItms = [
     {
       key: 0,
-      image: "" /*BILD */,
+      image: "" ,
       username: "Loading...",
       type: "",
       msg: "Loading...",
       time: "12:07",
     },
   ];
-
+  */
+chatItms = []
 
   constructor(props) {
     super(props);
@@ -37,6 +37,10 @@ export default class ChatContent extends Component {
 
     };
   }
+
+
+
+
 
   sendMessage = (message) => {
     if(!message && this.state.msg != ""){
@@ -53,6 +57,12 @@ export default class ChatContent extends Component {
    
   }
     
+
+
+
+
+
+  
 
     
   }
@@ -125,9 +135,13 @@ export default class ChatContent extends Component {
           
       })
   
+     
       
       
   }
+
+
+
 
   componentDidUpdate(prevProps, prevState) {
     
@@ -141,6 +155,15 @@ export default class ChatContent extends Component {
     console.log(this.state.chat)
     console.log("currentSession: " + this.props.currentSession)
     console.log("currentGroup: " + this.props.currentGroup)
+
+    if (this.state.chat.length == 0) {
+
+  
+    }
+
+    
+
+
   }
 
 
@@ -216,24 +239,31 @@ export default class ChatContent extends Component {
             </div>
           </div>
         </div>
-        <div className="content__body">
+
+        
+        <div className="content__body"> 
           <div className="chat__items">
-            {this.state.chat.map((itm, index) => {
-              return (
-                <ChatItem
-                  animationDelay={index + 2}
-                  key={itm.key}
-                  type={itm.type}
-                  msg={itm.msg}
-                  image={itm.image}
-                  username={itm.username}
-                  time={itm.time}
-                />
-              );
-            })}
+
+            <div className = "chatbox">Keine Nachrichten vorhanden</div>
+
+             {this.state.chat.map((itm, index) => {
+            return (
+            <ChatItem
+            animationDelay={index + 2}
+            key={itm.key}
+            type={itm.type}
+            msg={itm.msg}
+            image={itm.image}
+            username={itm.username}
+            time={itm.time}
+            />
+             );
+             })
+             }
             <div ref={this.messagesEndRef} />
           </div>
         </div>
+        
        
         <div className="content__footer">
           
@@ -250,7 +280,7 @@ export default class ChatContent extends Component {
               onChange={this.onStateChange}
               value={this.state.msg}
             />
-            <button className="btnSendMsg" id="sendMsgBtn" onClick={() => this.sendMessage}>
+            <button className="btnSendMsg" id="sendMsgBtn" onClick={() => this.sendMessage, this.check}>
               <i className="fa fa-paper-plane"></i>
             </button>
             

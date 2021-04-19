@@ -11,7 +11,7 @@ const Einladungslink = () => {
     return (
     
         <div>
-        {alert(uuid())}
+      link
         </div>
             
     )

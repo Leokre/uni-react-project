@@ -1,4 +1,4 @@
-import Button from "../../components/Button";
+import Button from "../../../components/Button";
 const Participent = ({ participent,onDelete }) => {
     return (
         <div className='participent'>
