@@ -15,14 +15,14 @@ const Register = ({}) => {
     
     
     return (
-<div>
+
 
 
         <div className = "container">
-
+<form>
 
            
-<form>
+
 <img src = {Bild} className="Bild"></img>
 <h1>Registrierung</h1>
 
@@ -45,7 +45,7 @@ const Register = ({}) => {
                 </form>
                 
         </div>
-        </div>
+  
     )
 }
 

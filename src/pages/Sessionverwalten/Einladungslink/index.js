@@ -31,11 +31,7 @@ const Sidebar = () => {
         </div>
 
   
-        <div className = "content2">
-
-       
-</div>
-
+    
 <Einladungslink/>
 
         </body>

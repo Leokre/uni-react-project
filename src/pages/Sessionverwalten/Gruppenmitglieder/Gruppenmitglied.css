@@ -1,5 +1,5 @@
 
-.con{
+.con1{
     width: 100vw;
     height: 95vh;
     display: grid;
@@ -14,28 +14,30 @@
 
 
 
-.Sidebar  {
+.Sidebar1  {
 grid-area: sideboard;
-height: 100%;
+height: 100% ;
 width: 300px;
 background-color:#242424;
+
 
 }
 
 
 
 
-.SidebarList {
+.SidebarList1 {
 
 
 height:auto ;
 padding: 0;
 width: 100%;
 
+
 }
 
 
-.SidebarList .row {
+.SidebarList1 .row1 {
 
 
     width: 100%;
@@ -53,7 +55,7 @@ width: 100%;
 }
 
 
-.SidebarList .row:hover{
+.SidebarList1 .row1:hover{
 
     cursor: pointer;
     background-color:#2e2d2d;
@@ -67,7 +69,7 @@ width: 100%;
 
 
 
-.row #icon {
+.row1 #icon {
 
 flex: 30%;
 place-items: center;
@@ -75,7 +77,7 @@ display: grid;
 
 }
 
-.row #title {
+.row1 #title {
 
     flex: 70%;
     
@@ -83,7 +85,7 @@ display: grid;
 
 
 
-    .rowtitle{
+    .rowtitle1{
 
 
         width: 100%;
@@ -121,79 +123,181 @@ display: grid;
 
 
     
-            
-            .content2 form{
-            
-            
-            width: 100%;
-            height: 100%;
-            padding: 20px;
-            background: white;
-            
-            }
-        
-
-            .content2 html .form-control {
-
-                width: 100%;
-                height: 40px;
-                background: white;
-                border-radius: 4px;
-                border: 1px solid silver;
-                margin: 10px 0 18px 0;
+          
                 
                 
-                
-                }
-                
-                .content2 html .btn{
-                
-                
-                width: 635px;
-                height: 45px;
-                border: none;
-                outline: none;
-                background: #3fa042;
-                cursor: pointer;
-                font-size: 16px;
-                text-transform: uppercase;
-                color: white;
-                border-radius: 4px;
-                transition: .3s;
-                
-                
-            }
+             .content1 {
 
-            .content2 html .btn:hover{
-                opacity: 0.7 ;
-            }
-            
-    
-                
+              
+              overflow: hidden;
+              height: 95vh;
+              padding: 0%;
+              overflow-y: scroll;
+             }
 
 
-           .content2 html .h1 {
+          
 
-            
-            margin-bottom: 5px;
-            color: #222222;
-            font-size: 14px;
-            font-family:  'Lucida Sans Unicode';
 
-                }
-
-                .content2 html .h2 {
-
-            
-                    margin-bottom: 5px;
-                    color: #222222;
-                    font-size: 18px;
-                    font-family:  'Lucida Sans Unicode';
-                    margin-bottom: 100px;
-                    text-align: center;
-                    border-bottom:1px solid grey;
-        
+                    .content1   .table-box1
+                        {
+                          margin: 50px auto;
+                          
+                          width: 100%;
+                          
+                          
                         }
-        
-        
+                      
+                        
+                      
+                        
+                       .table-row1{
+                          display: table;
+                          width: 80%;
+                          margin: 10px auto;
+                          font-family: sans-serif;
+                          background: transparent;
+                          padding: 12px 0;
+                          color:  #242424;
+                          font-size: 13px;
+                          box-shadow: 0 1px 4px 0px rgba(0,0,50,0.3);
+                          
+                      
+                        }
+                      
+                         .table-rows1{
+                          display: table;
+                          width: 80%;
+                          margin: 10px auto;
+                          font-family: sans-serif;
+                          background: transparent;
+                          padding: 12px 0;
+                          color:  #242424;
+                          font-size: 13px;
+                          box-shadow: 0 1px 4px 0px rgba(0,0,50,0.3);
+                          cursor: pointer;
+                          overflow: hidden;
+                         
 
+                        }
+                      
+                      
+                       .table-rows1:hover{
+                          color:rgb(158, 155, 155);
+                        }
+                      
+                        .table-head1{
+                          background-color:  #242424;
+                          box-shadow: none;
+                          color: #fff;
+                          font-weight: 600;
+                          height: 60px;
+                          
+                        }
+                        .table-head1 .table-cell1{
+                          border-right: none;
+                          background-color: #242424;
+                    
+                        }
+                        .table-cell1{
+                          display: table-cell;
+                          width: 20%;
+                          text-align: center;
+                          padding: 4px 0;
+                          border-right: 1px solid #d6d4d4;
+                          vertical-align: middle;
+                          
+                        }
+                      
+                      
+                      
+                        .first-cell1{
+                          text-align: center;
+                          padding-left: 10px;
+                        }
+                        
+                        .last-cell1{
+                          border-right: none;
+                        }
+                        a{
+                          text-decoration: none;
+                          color: #555;
+                        }
+                        
+                        
+                        .heading1 {
+                        
+                        text-align: center;
+                        color: rgb(0, 0, 0);
+                        
+                        }
+
+
+                        .switch{
+
+                          position: relative;
+                          display: inline-block;
+                          width: 60px;
+                          height: 34px;
+
+                        }
+                        
+                        .switch input{
+
+                          opacity: 0;
+                          width: 0;
+                          height: 0;
+
+
+
+                        }
+                        
+                        .slider{
+
+                          position: absolute;
+                          cursor: pointer;
+                          top: 0;
+                          left: 0;
+                          right: 0;
+                          bottom: 0;
+
+                          background-color:grey;
+
+                        }
+
+
+                        .slider::before{
+
+
+                          position: absolute;
+                          content: "";
+                          height: 26px;
+                          width: 26px;
+                          left: 4px;
+                          bottom: 4px;
+                          background-color: white;
+                          transition: 0.4s;
+
+                          
+
+                        }
+                        
+
+                        input:checked + .slider{
+                          background-color: rgb(39, 155, 59);
+                          
+                        }
+
+                        input:checked + .slider::before{
+
+                          transform: translatex(26px);
+                        }
+
+
+
+                        .icon{
+                          color: #ac2929;
+                          cursor: pointer;
+                          
+                        }
+                        

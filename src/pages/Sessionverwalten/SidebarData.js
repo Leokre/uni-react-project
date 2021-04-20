@@ -21,15 +21,9 @@ title: "Gruppenmitglieder verwalten",
 icon: <MessageIcon/>,
 link:  "/sessionverwalten/gruppenmitglied"
 
-},
+}
 
-{
 
-    title: "Rechte-Vergabe",
-    icon: <SettingsIcon/>,
-    link: "/login"
-    
-    }
 
 
 ]
