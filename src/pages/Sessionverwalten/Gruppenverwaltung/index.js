@@ -13,7 +13,7 @@ import Divider from '@material-ui/core/Divider';
 import {useState} from 'react'
 import { blue } from '@material-ui/core/colors';
 import '../Gruppenmitglieder/Popup.css'
-
+  
 
 const useStyles = makeStyles((theme) => ({
   root: {
