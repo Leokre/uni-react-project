@@ -17,6 +17,8 @@ import Profil from "./pages/Profilseite/PersönlicheInfos/index.js"
 import SchnellAntwort from "./pages/Profilseite/Schnellantworten/index.js"
 import Gruppenmitglied from "./pages/Sessionverwalten/Gruppenmitglieder/index.js"
 import Einladungslink from "./pages/Sessionverwalten/Einladungslink/index.js"
+import Gruppenverwaltung from "./pages/Sessionverwalten/Gruppenmitglieder/index.js"
+
 import Chat from "./pages/Chat/chatBody/ChatBody.js"
 
 require('dotenv').config()
@@ -147,6 +149,15 @@ function App() {
         </>
         
       )}></Route>
+
+
+<Route path="/sessionverwalten/gruppenverwaltung" exact render={(props)=>(
+        <>
+         <Gruppenverwaltung/>
+        </>
+        
+      )}></Route>
+      
       
 
 

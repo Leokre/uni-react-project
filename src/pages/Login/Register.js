@@ -19,7 +19,7 @@ const Register = ({}) => {
 
 
         <div className = "container">
-<form>
+<div className = "form">
 
            
 
@@ -42,7 +42,7 @@ const Register = ({}) => {
 
                 <Button text="Register" cssClass="btn" onClick={()=>register(username,password,backendURL)} />
 
-                </form>
+                </div>
                 
         </div>
   

@@ -1,10 +1,18 @@
 import Participent from './Participent'
 import './Gruppenmitglied.css'
 import DeleteIcon from '@material-ui/icons/Delete';
+import {Link} from 'react-router-dom'
+import { useState } from 'react';
+import Popup from './Popup.js'
+import './Popup.css'
+import Gruppenverwaltung from '../Gruppenverwaltung/index.js'
+
 
 const Participents = ({participents, onDelete}) => {
 
+    
 
+    const [buttonPopup, setButtonPopup ] = useState(false)
    
 return (
     <div className = "content1"> 
@@ -42,7 +50,7 @@ return (
 
 
 <div className="table-box1">
-    <div className="table-row1">
+  <Link to= "/sessionverwalten/gruppenverwaltung" onClick = {() => setButtonPopup(true)}>  <div className="table-row1"> 
         <div className="table-cell1 first-cell1">
             {participent.id}
         </div>
@@ -64,13 +72,15 @@ return (
         <DeleteIcon  className ="icon"onClick = {()=>onDelete(participent.id)}/>
         </div> 
 
-        </div>
+        </div>  </Link>
 </div>
 
 
 ))}
 
-
+<Popup trigger = {buttonPopup} setTrigger ={setButtonPopup}> 
+<h1 className = "headerpop">Gruppen verwalten</h1>
+<Gruppenverwaltung></Gruppenverwaltung></Popup>
 
     
 
