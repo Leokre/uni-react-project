@@ -261,7 +261,7 @@ display: grid;
                           right: 0;
                           bottom: 0;
 
-                          background-color:grey;
+                          background-color:rgb(168, 165, 165);
 
                         }
 
@@ -300,4 +300,11 @@ display: grid;
                           cursor: pointer;
                           
                         }
+
+                        .icon1{
+                          color: #363636;
+                          cursor: pointer;
+                          
+                        }
+                        
                         

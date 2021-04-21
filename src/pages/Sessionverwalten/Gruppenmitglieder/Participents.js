@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import { useState } from 'react';
 import Popup from './Popup.js'
 import './Popup.css'
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import Gruppenverwaltung from '../Gruppenverwaltung/index.js'
 
 
@@ -33,7 +34,9 @@ return (
            Admin
         </div>
        
-       
+        <div className="table-cell1">
+           -
+        </div>
         <div className="table-cell1 last-cell1">
            -
         </div> 
@@ -50,7 +53,7 @@ return (
 
 
 <div className="table-box1">
-  <Link to= "/sessionverwalten/gruppenverwaltung" onClick = {() => setButtonPopup(true)}>  <div className="table-row1"> 
+   <div className="table-row1"> 
         <div className="table-cell1 first-cell1">
             {participent.id}
         </div>
@@ -61,18 +64,21 @@ return (
         <div className="table-cell1">
         <label className = "switch">
             
-            <input type = "checkbox" /*checked = {isToggled} onChange={onToggle}*//>
+            <input type = "checkbox" /* state oben einsetzen und dann benutzen checked = {isToggled} onChange={onToggle}*//>
             <span className = "slider"/>
         
         </label>
         </div>
-       
+
+        <div className="table-cell1">
+         <GroupAddIcon className ="icon1" onClick = {() => setButtonPopup(true)}/>  
+        </div>
        
         <div className="table-cell1 last-cell1">
         <DeleteIcon  className ="icon"onClick = {()=>onDelete(participent.id)}/>
         </div> 
 
-        </div>  </Link>
+        </div> 
 </div>
 
 
