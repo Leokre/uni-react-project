@@ -75,9 +75,9 @@ setinviteCode('')
 
     return (
 
-        <div className = "container">
+        <form className = "container">
            
-           <form>
+           <div className="form">
            <img src = {Bild} className="Bild"></img>
                <div className = "form-group">
                 <label>Einladungscode</label>
@@ -98,9 +98,9 @@ setinviteCode('')
             
             
 
-            </form>
+            </div>
         
-        </div>
+        </form>
 
 
 

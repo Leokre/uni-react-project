@@ -15,14 +15,14 @@ const Register = ({}) => {
     
     
     return (
-<div>
+
 
 
         <div className = "container">
-
+<div className = "form">
 
            
-<form>
+
 <img src = {Bild} className="Bild"></img>
 <h1>Registrierung</h1>
 
@@ -42,10 +42,10 @@ const Register = ({}) => {
 
                 <Button text="Register" cssClass="btn" onClick={()=>register(username,password,backendURL)} />
 
-                </form>
+                </div>
                 
         </div>
-        </div>
+  
     )
 }
 

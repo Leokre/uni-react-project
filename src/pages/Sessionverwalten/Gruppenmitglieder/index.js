@@ -11,6 +11,7 @@ import {useState} from 'react'
 
 
 
+
      
 const Sidebar = () => {
 
@@ -26,22 +27,27 @@ const Sidebar = () => {
         {id: 2, text : "Elyas"},
         {id: 3, text : "Aman"},
         {id: 4, text : "Leon"},
+        {id: 5, text : "Leon"},
+        {id: 6, text : "Leon"},
+        {id: 7, text : "Leon"},
+        {id: 8, text : "Leon"},
+
       ])
 
     return (
 
-        <body className = "con">
-        <div className="Sidebar">
-     <ul className = "SidebarList" >    
+        <body className = "con1">
+        <div className="Sidebar1">
+     <ul className = "SidebarList1" >    
 
 
-<h1 className = "rowtitle ">Mein Profil</h1>
+<h1 className = "rowtitle1">Mein Profil</h1>
 
 {SidebarData.map((val,key) => {
     
     return (
      
-<li key = {key} className = "row" onClick= {() => {window.location.pathname = val.link}}> {""} <div id = "icon">{val.icon}</div>  {""}
+<li key = {key} className = "row1" onClick= {() => {window.location.pathname = val.link}}> {""} <div id = "icon">{val.icon}</div>  {""}
 
 <div id = "title">{val.title}</div>
 
@@ -57,11 +63,31 @@ const Sidebar = () => {
   
         <div className = "content2">
 
+
+
+
+
+
+
+
+
+
+
         <Participents participents = {participents} onDelete ={deleteParticipent}/>
+
+
+
+
+
 </div>
 
 
         </body>
+
+
+
+
+
     )
 }
 

@@ -62,7 +62,7 @@ const  handleSubmit = (e) => {
       <div className = "container">
 
 
-    <form onSubmit = {handleSubmit} >
+    <form className="form" onSubmit = {handleSubmit} >
     <img src = {Bild} className="Bild"></img>
       <div className = "form-group">
       <label> Session Name: </label>

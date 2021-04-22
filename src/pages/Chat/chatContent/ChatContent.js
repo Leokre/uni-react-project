@@ -13,6 +13,7 @@ var i = 1
 
 
 
+
 export default class ChatContent extends Component {
   messagesEndRef = createRef(null);
  /*chatItms = [
@@ -141,7 +142,7 @@ chatItms = []
   }
 
 
-
+ 
 
   componentDidUpdate(prevProps, prevState) {
     
@@ -156,11 +157,8 @@ chatItms = []
     console.log("currentSession: " + this.props.currentSession)
     console.log("currentGroup: " + this.props.currentGroup)
 
-    if (this.state.chat.length == 0) {
-
-  
-    }
-
+    
+    
     
 
 
@@ -174,6 +172,9 @@ chatItms = []
     this.getChatLog(backendURL)
   
 
+
+
+  
 
     this.state.chatSocket.on('getUserGroups',function(data){console.log(data)})
 
@@ -244,22 +245,20 @@ chatItms = []
         <div className="content__body"> 
           <div className="chat__items">
 
-            <div className = "chatbox">Keine Nachrichten vorhanden</div>
-
-             {this.state.chat.map((itm, index) => {
-            return (
-            <ChatItem
-            animationDelay={index + 2}
-            key={itm.key}
-            type={itm.type}
-            msg={itm.msg}
-            image={itm.image}
-            username={itm.username}
-            time={itm.time}
-            />
-             );
-             })
-             }
+         
+          {this.state.chat.map((itm, index) => {
+return (
+<ChatItem
+animationDelay={index + 2}
+key={itm.key}
+type={itm.type}
+msg={itm.msg}
+image={itm.image}
+username={itm.username}
+time={itm.time}
+/>
+ );
+ })}
             <div ref={this.messagesEndRef} />
           </div>
         </div>

@@ -3,13 +3,14 @@ import '../popup.css'
 import Popup from '../Popup.js'
 
 
-const Dropdown = ({title,items=[],multiSelect = false,callback,autoClose, className}) => {
+const Dropdown = ({title,items=[],multiSelect = false,callback,autoClose, className,  autoclose}) => {
 const [open,setOpen] = useState(true);
 const [selection,setSelection] = useState([]);
 const toggle = ()=> setOpen(!open)
 
 const handleOnClick = (item)=>{
 
+    autoclose(false)
 
             setSelection(item.value)
             if(autoClose && callback){

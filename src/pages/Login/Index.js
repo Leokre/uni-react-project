@@ -63,7 +63,7 @@ const Index = ({}) => {
         return (
             <div className = "container">
                 
-<form >
+<div className ="form">
 <img src = {Bild} className="Bild"></img>
                 <h1>Willkommen auf unserer Plattform</h1>
                 <h4>Wie dürfen wir sie nennen?</h4>
@@ -82,7 +82,7 @@ const Index = ({}) => {
               <Button text="Bereits Mitglied?" className="alreadyRegisteredButton" onClick={e => setAlreadyRegistered(true)}/>
     
 
-                </form>
+                </div>
 
                
             </div>
@@ -91,6 +91,7 @@ const Index = ({}) => {
     }else{
         return (
             <div className= "container">
+              <div className ="form">
 
                 <div>
                 <h1>Willkommen zurück!</h1>
@@ -101,9 +102,10 @@ const Index = ({}) => {
                     login(username,password)
                     
                     
-
+                    
 
                 }}/>
+                </div>
           </div>
             </div>
         )

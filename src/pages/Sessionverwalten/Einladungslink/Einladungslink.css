@@ -114,7 +114,7 @@ display: grid;
         width: 700px;
         max-width: 90%;
         align-self: center;
-                align-items: center;
+        align-items: center;
 
         }
 
@@ -172,28 +172,16 @@ display: grid;
                 
 
 
-           .content2 html .h1 {
-
-            
-            margin-bottom: 5px;
-            color: #222222;
-            font-size: 14px;
-            font-family:  'Lucida Sans Unicode';
-
-                }
-
-                .content2 html .h2 {
-
-            
-                    margin-bottom: 5px;
-                    color: #222222;
-                    font-size: 18px;
-                    font-family:  'Lucida Sans Unicode';
-                    margin-bottom: 100px;
-                    text-align: center;
-                    border-bottom:1px solid grey;
+   
         
+
+
+              .content2          .buttone{
+
+width: 200px;
+height: 30px;
+color: lawngreen;
+
                         }
-        
         
 
