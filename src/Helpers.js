@@ -52,6 +52,6 @@ export function register(usr,pwd,backendURL){
       })
   }
 
-  export function msgTimeFromTimestamp(timestamp){
-    return (timestamp *1000).toFixed.getTime()
+  export function localTimeFromTimestamp(timestamp){
+    return new Date(timestamp).toLocaleTimeString()
   }

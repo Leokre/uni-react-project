@@ -10,7 +10,7 @@ export const SidebarData = [
 
     
     {
-title: "Einladungslink generieren",
+title: "Einladungscode generieren",
 icon: <AccountCircleIcon/>,
 link: "/sessionverwalten/einladungslink"
 
@@ -18,7 +18,7 @@ link: "/sessionverwalten/einladungslink"
 
 {
 
-title: "Mitlgieder verwalten",
+title: "Mitglieder verwalten",
 icon: <MessageIcon/>,
 link:  "/sessionverwalten/gruppenmitglied"
 

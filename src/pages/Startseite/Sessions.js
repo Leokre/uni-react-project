@@ -83,11 +83,16 @@ const Sessions = ({session,username}) => {
 </div>
 
 <div className="table-cell last-cell">
-<Link to ="/sessionverwalten/gruppenmitglied">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"></link>
-   <span className="material-icons">settings</span>  
-   </Link> 
+<Link to={{
+  pathname: '/sessionverwalten/gruppenmitglied',
+  state: {
+    currentSession: element.id
+  }
+}}><link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet"></link>
+<span className="material-icons">settings</span>  </Link> 
+
+
 </div>   
 
 </div> 

@@ -1,6 +1,6 @@
 
 
-const Input = ({type,cssClass,state,setState,onkeydown}) => {
+const Input = ({type,cssClass,state,setState,onkeydown,disable}) => {
     function handleKeyPress(e){
         if(onkeydown!= undefined && e.key == "Enter" && state != ""){
             onkeydown(state)
@@ -9,7 +9,7 @@ const Input = ({type,cssClass,state,setState,onkeydown}) => {
     }
     
     
-    return <input className="form-control" type={type} value={state} onInput={e => setState(e.target.value)} onKeyDown={handleKeyPress}/>
+    return <input className="form-control" type={type} value={state} onInput={e => setState(e.target.value)} onKeyDown={handleKeyPress} disabled = {disable?  "disabled" : ""}/>
     
 }
 

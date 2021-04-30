@@ -138,14 +138,14 @@ function App() {
 
         <Route path="/sessionverwalten/gruppenmitglied" exact render={(props)=>(
         <>
-         <Gruppenmitglied/>
+         <Gruppenmitglied currentSession={props.location.state.currentSession}/>
         </>
         
       )}></Route>
 
 <Route path="/sessionverwalten/einladungslink" exact render={(props)=>(
         <>
-         <Einladungslink/>
+         <Einladungslink currentSession={props.location.state.currentSession}/>
         </>
         
       )}></Route>
@@ -153,7 +153,7 @@ function App() {
 
 <Route path="/sessionverwalten/gruppenverwaltung" exact render={(props)=>(
         <>
-         <Gruppenverwaltung/>
+         <Gruppenverwaltung currentSession={props.location.state.currentSession} />
         </>
         
       )}></Route>
@@ -294,14 +294,15 @@ function App() {
 
 <Route path="/sessionverwalten/gruppenmitglied" exact render={(props)=>(
         <>
-         <Gruppenmitglied/>
+         <Gruppenmitglied currentSession={props.location.state.currentSession}/>
         </>
         
       )}></Route>
 
 <Route path="/sessionverwalten/einladungslink" exact render={(props)=>(
         <>
-         <Einladungslink/>
+  
+         <Einladungslink currentSession={props.location.state.currentSession}/>
         </>
         
       )}></Route>
