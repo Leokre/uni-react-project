@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
@@ -10,9 +11,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import { blue } from '@material-ui/core/colors';
 import '../Gruppenmitglieder/Popup.css'
+import Axios from "axios"
+import qs from "qs"
   
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +49,7 @@ function union(a, b) {
   return [...a, ...not(b, a)];
 }
 
-export default function TransferList() {
+export default function TransferList({currentSession,allGroups,joinedGroups,currentUser}) {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([]);
   const [left, setLeft] = React.useState(['Gruppe 1','Gruppe 2', 'Gruppe 3', 'Gruppe 4',  'Gruppe 5', 'Gruppe 6']);
@@ -54,6 +57,72 @@ export default function TransferList() {
 
   const leftChecked = intersection(checked, left);
   const rightChecked = intersection(checked, right);
+
+
+  const confirmSelection = ()=>{
+    console.log("confirmSelection triggered")
+    let groups = []
+
+    right.forEach(element=>{
+      groups.push(element.replace("Gruppe ",""))
+    })
+    console.log(groups)
+    const log = Axios.create({
+      withCredentials: true
+    })
+
+    log({
+        method: 'post',
+        url: process.env.REACT_APP_BACKEND_URL+"/Session/setUserGroups",
+        data: qs.stringify({
+          sessionID: currentSession,
+          targetID: currentUser,
+          groups: JSON.stringify(groups)
+
+        }),
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+        }
+      }).then(response => {
+          console.log(response)
+          if(!response.data){
+             
+          }else{
+         
+              
+             
+              
+
+              
+          }
+        
+    })
+  }
+
+
+  useEffect(()=>{
+    console.log("allgroups/joined")
+    console.log(allGroups)
+    console.log(joinedGroups)
+    let all = []
+    let joined = []
+    joinedGroups.forEach(element => {
+      joined.push("Gruppe " + element.GruppenID)
+    });
+    allGroups.forEach(element => {
+
+      if (!joinedGroups.some(e => e.GruppenID === element.GruppenID)) {
+        all.push("Gruppe " + element.GruppenID)
+      }
+     
+    });
+    
+    console.log("all " + all)
+    console.log(joined)
+    setLeft(all)
+    setRight(joined)
+  },[])
+
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -149,7 +218,7 @@ export default function TransferList() {
 
 
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
-      <Grid item>{customList('Auswahl', left)}</Grid>
+      <Grid item>{customList('Gruppen', left)}</Grid>
       <Grid item>
         <Grid container direction="column" alignItems="center">
           <Button
@@ -174,11 +243,11 @@ export default function TransferList() {
           </Button>
         </Grid>
       </Grid>
-      <Grid item>{customList('Ausgewählt', right)}</Grid>
+      <Grid item>{customList('Mitglied in', right)}</Grid>
     </Grid>
 
-
-
+    <button onClick = {()=> confirmSelection()}>Bestätigen</button>
+    
 
 
 

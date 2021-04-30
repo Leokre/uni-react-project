@@ -7,7 +7,7 @@ import Axios from "axios"
 import qs from "qs"
 import FunctionBar from "./functionBar/FunctionBar";
 import SendIcon from '@material-ui/icons/Send';
-import {msgTimeFromTimestamp} from "../../../Helpers"
+import {localTimeFromTimestamp} from "../../../Helpers"
 const backendURL = process.env.REACT_APP_BACKEND_URL
 var i = 1
 
@@ -118,7 +118,7 @@ chatItms = []
                 type: this.props.currentUser == element.Username ? "me" : "other",
                 username: element.Username,
                 msg: element.Message,
-                time: element.MessTimestamp,
+                time: localTimeFromTimestamp(element.MessTimestamp),
                 }
                 
                 chatLog.push(newMessage)
@@ -197,7 +197,7 @@ chatItms = []
       type: this.props.currentUser == messageObject.username ? "me" : "other",
       username: messageObject.username,
       msg: messageObject.message,
-      time: messageObject.time,
+      time: localTimeFromTimestamp(messageObject.time),
       })
 
       this.setState({ chat: newChatLog });

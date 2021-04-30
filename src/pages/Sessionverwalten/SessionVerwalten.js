@@ -13,7 +13,7 @@ import  './SessionVerwalten.css'
 
 
 
-const SessionVerwalten = () => {
+const SessionVerwalten = ({sessionID}) => {
    
     let Antwort = ""
     function callbackThema(a){
@@ -75,7 +75,7 @@ return (
           <Link to = "/einladungslink"> <Button text="Einladungslink generieren" cssClass= "btn"/>  </Link>
           <Route path="/einladungslink" exact render={(props)=>(<>
       <br> </br>  
-      <Einladungslink/>
+      <Einladungslink sessionID= {sessionID}/>
        
     </> )}></Route>
 
