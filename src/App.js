@@ -27,7 +27,7 @@ function App() {
   const [loggedIn, setloggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [quickReplies, setquickReplies] = useState("");
-  const backendURL="http://localhost:5000"
+  const backendURL=process.env.REACT_APP_BACKEND_URL
   
 
 
@@ -40,11 +40,6 @@ function App() {
       withCredentials: true
     })
    check.get(backendURL + "/checkAuth",{
-    /*
-    headers:{
-       "x-access-token": localStorage.getItem("token")
-     },
-     */
    }).then((response) =>{
     if(response.data.user == null) {
       console.log("NOT_AUTHORIZED")
@@ -253,9 +248,6 @@ function App() {
         </Link>
 
 
-        <Link to="/dashboard">
-                  <Button cssClass="MainMenuButton" text="Dashboard" />
-            </Link>
 
         <Link to="/login">
               <Button cssClass="MainMenuButton" id="loginButton" text="Login" className="loginButton"/>
@@ -278,12 +270,6 @@ function App() {
         
       )}></Route>
 
-<Route path="/dashboard" exact render={(props)=>(
-        <>
-          <Dashboard />
-        </>
-        
-      )}></Route>
 
       <Route path="/login/register" exact render={(props)=>(
         <>

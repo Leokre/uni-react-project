@@ -30,8 +30,8 @@ const FunctionBar = ({quickReplies,callback}) => {
             <Button cssClass = "popbutton1"onClick = {() => setButtonPopup(true)}text="Inforequest"/>
             <Popup trigger = {buttonPopup} setTrigger ={setButtonPopup}>
 
-<h1>test </h1>
-<h2>was geeeeeehtt</h2>
+<h1>Inforequest </h1>
+<h2>test</h2>
             </Popup>
 
 

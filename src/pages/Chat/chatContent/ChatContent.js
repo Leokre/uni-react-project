@@ -34,8 +34,10 @@ chatItms = []
     this.state = {
       chat: this.chatItms,
       msg: "",
-      chatSocket: this.props.chatSocket
-
+      chatSocket: this.props.chatSocket,
+      sessionName:this.props.sessionName,
+      sessionTopic:this.props.sessionTopic,
+      sessionID: this.props.sessionID
     };
   }
 
@@ -76,7 +78,8 @@ chatItms = []
   }
  
   scrollToBottom = () => {
-     this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    console.log("Scrolling to Bottom...")
+     this.messagesEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
   };
 
 

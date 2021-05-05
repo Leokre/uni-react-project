@@ -38,7 +38,7 @@ const SchnellAntwort   = ({quickReplies}) => {
              
               
              if(response.data.msg == "ERR_INPUT_EMPTY") alert("Bitte geben sie etwas ein!")
-              
+             
              
               
 
@@ -72,8 +72,8 @@ const SchnellAntwort   = ({quickReplies}) => {
   
   const replies = Antwort1 + ";" + Antwort2 + ";" + Antwort3 + ";" + Antwort4 + ";" + Antwort5
   setQuickReplies(replies)
-  alert('Replies:'+ replies)
-  
+
+  window.location.reload();
   
   }
    return (
