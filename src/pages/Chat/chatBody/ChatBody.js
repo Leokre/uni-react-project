@@ -25,7 +25,9 @@ export default class ChatBody extends Component {
       currentSession: props.currentSession,
       userGroups: "",
       currentGroup: 0,
-      quickReplies: props.quickReplies
+      quickReplies: props.quickReplies,
+      sessionName:this.props.sessionName,
+      sessionTopic:this.props.sessionTopic
       
     };
   }

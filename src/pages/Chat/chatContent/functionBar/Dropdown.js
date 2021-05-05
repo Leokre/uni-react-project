@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState,useEffect} from "react"
 import '../popup.css'
 import Popup from '../Popup.js'
 
@@ -21,6 +21,10 @@ const handleOnClick = (item)=>{
 
 
 }
+
+
+    console.log("items: " + items)
+if(items.length <= 0) return <div className="dd-wrapper"></div>
 
 
     return (
