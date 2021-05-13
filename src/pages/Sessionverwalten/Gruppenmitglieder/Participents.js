@@ -188,6 +188,7 @@ return (
 
 <Popup trigger = {buttonPopup} setTrigger ={setButtonPopup}> 
 <h1 className = "headerpop">Gruppen verwalten</h1>
+
 <Gruppenverwaltung currentSession={currentSession} currentUser={currentUser} allGroups={allGroups} joinedGroups={joinedGroups}></Gruppenverwaltung></Popup>
 
     

@@ -16,6 +16,7 @@ import { blue } from '@material-ui/core/colors';
 import '../Gruppenmitglieder/Popup.css'
 import Axios from "axios"
 import qs from "qs"
+import DeleteIcon from '@material-ui/icons/Delete';
   
 
 const useStyles = makeStyles((theme) => ({
@@ -160,7 +161,12 @@ export default function TransferList({currentSession,allGroups,joinedGroups,curr
   };
 
   const customList = (title, items) => (
+
+
+
       <div className = " card">
+
+
     <Card>
       <CardHeader
         className={classes.cardHeader}
@@ -191,7 +197,8 @@ export default function TransferList({currentSession,allGroups,joinedGroups,curr
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary= {value} />
+              <ListItemText id={labelId} primary= {value}/> <DeleteIcon />
+              
             </ListItem>
           );
         })}
@@ -214,11 +221,11 @@ export default function TransferList({currentSession,allGroups,joinedGroups,curr
  
 
 
-
+<div className="ct"><Button variant="outlined" text="Gruppe hinzufügen">Gruppe hinzufügen</Button> </div>
 
 
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
-      <Grid item>{customList('Gruppen', left)}</Grid>
+      <Grid item>{customList('Gruppen', left)} </Grid>
       <Grid item>
         <Grid container direction="column" alignItems="center">
           <Button
@@ -241,12 +248,13 @@ export default function TransferList({currentSession,allGroups,joinedGroups,curr
           >
             &lt;
           </Button>
+          
         </Grid>
       </Grid>
       <Grid item>{customList('Mitglied in', right)}</Grid>
     </Grid>
-
-    <button onClick = {()=> confirmSelection()}>Bestätigen</button>
+   <br></br><br></br>
+   <div className = "ct"> <Button  variant="outlined" className= {classes.button} onClick = {()=> confirmSelection()}>Bestätigen</Button> </div>
     
 
 

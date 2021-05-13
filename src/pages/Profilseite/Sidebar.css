@@ -10,7 +10,6 @@
     "sideboard content content content"
     "sideboard content content content"
     "sideboard content content content";
-   
 }
 
 
@@ -110,15 +109,14 @@ display: grid;
 
 
 
- .content2 {
+    .content2 {
 
         grid-area: content;
         margin: auto;
         width: 700px;
         max-width: 90%;
-        
-        
-       
+        align-self: center;
+                align-items: center;
 
         }
 

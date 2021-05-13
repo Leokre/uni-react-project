@@ -118,7 +118,7 @@ const Sidebar = ({currentSession}) => {
 <Link to={{
             pathname: val.link,
             state: {
-              currentSession: currentSession
+            currentSession: currentSession
             }
           }}>
 <li key = {key} className = "row1" > {""} <div id = "icon">{val.icon}</div>  {""}
