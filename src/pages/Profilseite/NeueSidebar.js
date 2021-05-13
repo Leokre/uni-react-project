@@ -1,7 +1,8 @@
 import React from 'react'
-import './Profilseite.css'
-import {SidebarData} from '../SidebarData'
-import Profildaten from './Label.js'
+import './Sidebar.css'
+import {SidebarData} from './SidebarData'
+import Profildaten from './PersönlicheInfos/Label.js'
+
 
 const Sidebar = () => {
     return (
@@ -29,12 +30,8 @@ const Sidebar = () => {
 
         </div>
 
-  
-        <div className = "content2">
-
-        <Profildaten/>
-</div>
-
+      
+    
 
         </body>
     )

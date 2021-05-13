@@ -28,7 +28,7 @@ link:  "/sessionverwalten/gruppenmitglied"
 
     title: "Gruppenverwaltung",
     icon: <GroupWorkIcon/>,
-    link:  "/sessionverwalten/gruppenverwaltung" 
+    link:  "/sessionverwalten/gruppenerstellen" 
     
     }
     
