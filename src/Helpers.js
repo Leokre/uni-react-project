@@ -23,10 +23,6 @@ export function logout(backendURL){
 
   
 export function register(usr,pwd,backendURL){
-    /*  Axios.post(Constants.backendURL + "/addUser",{
-          username: username,
-          password: password
-      })  */
       Axios({
           method: 'post',
           url: backendURL+"/addUser",
