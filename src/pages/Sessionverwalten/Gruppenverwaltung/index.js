@@ -100,7 +100,82 @@ export default function TransferList({currentSession,allGroups,joinedGroups,curr
     })
   }
 
+  const deleteGroup = (grpID) => {
+    console.log("deleteGroup triggered")
+    const grp = Axios.create({
+      withCredentials: true
+    })
+  
+    grp({
+        method: 'post',
+        url: process.env.REACT_APP_BACKEND_URL+"/Session/deleteGroup",
+        data: qs.stringify({
+          sessionID: currentSession,
+          groupID : grpID
+        }),
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+        }
+      }).then(response => {
+          console.log(response)
+          if(!response.data){
+             
+          }else{
+  
+             //console.log(response.data)
+             if(response.data.msg == "DELETE_GROUP_SUCCESS"){
+               console.log("Gruppe " + grpID)
+               console.log(left.indexOf("Gruppe " + grpID))
+               console.log(right.indexOf("Gruppe " + grpID))
 
+               const newLeft = []
+               const newRight = []
+               left.forEach(element => {
+                 if(!(element == "Gruppe " + grpID)) newLeft.push(element)
+               })
+               right.forEach(element => {
+                if(!(element == "Gruppe " + grpID)) newRight.push(element)
+              })
+                setLeft(newLeft)
+                setRight(newRight)
+             }
+  
+              
+          }
+        
+    })
+  }
+
+const addGroup = () => {
+  const grp = Axios.create({
+    withCredentials: true
+  })
+
+  grp({
+      method: 'post',
+      url: process.env.REACT_APP_BACKEND_URL+"/Session/addGroup",
+      data: qs.stringify({
+        sessionID: currentSession
+      }),
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+      }
+    }).then(response => {
+        //console.log(response)
+        if(!response.data){
+           
+        }else{
+
+           //console.log(response.data)
+           if(response.data.msg == "GROUP_CREATE_SUCCESS"){
+            setLeft([...left,"Gruppe " + response.data.id])
+           }
+
+            
+        }
+      
+  })
+}
   useEffect(()=>{
     console.log("allgroups/joined")
     console.log(allGroups)
@@ -188,8 +263,8 @@ export default function TransferList({currentSession,allGroups,joinedGroups,curr
           const labelId = `transfer-list-all-item-${value}-label`;
 
           return (
-            <ListItem key={value} role="listitem" button onClick={handleToggle(value)}>
-              <ListItemIcon>
+            <ListItem key={value} role="listitem" button>
+              <ListItemIcon onClick={handleToggle(value)}>
                 <Checkbox
                   checked={checked.indexOf(value) !== -1}
                   tabIndex={-1}
@@ -197,8 +272,9 @@ export default function TransferList({currentSession,allGroups,joinedGroups,curr
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary= {value}/> <DeleteIcon />
+              <ListItemText id={labelId} primary= {value} onClick={handleToggle(value)}/> 
               
+              <DeleteIcon onClick={()=>{deleteGroup(value.split(" ")[1])}}/>
             </ListItem>
           );
         })}
@@ -221,7 +297,10 @@ export default function TransferList({currentSession,allGroups,joinedGroups,curr
  
 
 
-<div className="ct"><Button variant="outlined" text="Gruppe hinzufügen">Gruppe hinzufügen</Button> </div>
+<div className="ct"><Button variant="outlined" text="Gruppe hinzufügen" onClick={() => {
+
+addGroup()}}>Gruppe hinzufügen</Button> </div>
+
 
 
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
