@@ -20,7 +20,6 @@ const Index = ({}) => {
     const [loggedIn, setloggedIn] = useState(false);
     const [alreadyRegistered, setAlreadyRegistered] = useState(loggedIn);
     const backendURL = process.env.REACT_APP_BACKEND_URL
-    const defaultPassword = "NoPass"
 
     const login = (usr,pwd)=>{
 
@@ -71,8 +70,7 @@ const Index = ({}) => {
                 
                
                 <Button text="Login" className="loginButton" onClick={() => {
-                   register(username,defaultPassword,backendURL)
-                   setTimeout(()=>{login(username,defaultPassword); }, 100)
+                   register(username,null,backendURL)
                
 
 
