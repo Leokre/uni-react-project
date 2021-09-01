@@ -91,17 +91,7 @@ const Sidebar = ({currentSession}) => {
       
       
 
-    const [participents, setParticipents] = useState ([
-        {userID: 1, username : "Diyan"},
-        {userID: 2, username : "Elyas"},
-        {userID: 3, username : "Aman"},
-        {userID: 4, username : "Leon"},
-        {userID: 5, username : "Leon"},
-        {userID: 6, username : "Leon"},
-        {userID: 7, username : "Leon"},
-        {userID: 8, username : "Leon"},
-
-      ])
+    const [participents, setParticipents] = useState ([])
 
     return (
 
