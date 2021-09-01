@@ -22,15 +22,7 @@ title: "Mitglieder verwalten",
 icon: <MessageIcon/>,
 link:  "/sessionverwalten/gruppenmitglied"
 
-},
-
-{
-
-    title: "Gruppenverwaltung",
-    icon: <GroupWorkIcon/>,
-    link:  "/sessionverwalten/gruppenerstellen" 
-    
-    }
+}
     
 
 
