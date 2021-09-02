@@ -33,7 +33,8 @@ const SessionVerwalten = ({sessionID}) => {
     
     
         const deleteParticipent = (id) => {
-          setParticipents(participents.filter((participent)=> participent.id !== id))
+          
+
         }
     
         
@@ -41,7 +42,7 @@ const SessionVerwalten = ({sessionID}) => {
           
           
           
-          <Participents participents = {participents} onDelete ={deleteParticipent}/>
+          <Participents participents = {participents} onDelete ={deleteParticipent()}/>
     
      
     

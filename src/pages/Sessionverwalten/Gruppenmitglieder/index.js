@@ -85,7 +85,37 @@ const Sidebar = ({currentSession}) => {
 
 
     const deleteParticipent = (id) => {
-        setParticipents(participents.filter((participent)=> participent.id !== id))
+
+      
+        const log = Axios.create({
+          withCredentials: true
+        })
+  
+        log({
+            method: 'post',
+            url: process.env.REACT_APP_BACKEND_URL+"/Session/removeUser",
+            data: qs.stringify({
+              targetID: id,
+              sessionID: currentSession
+            }),
+            headers: {
+              'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+            }
+          }).then(response => {
+              console.log(response)
+              setParticipents(participents.filter(participent=> participent.userID !== id))
+                 
+              
+                 
+                  
+  
+                  
+              
+            
+        })
+
+        
+        
       }
   
       

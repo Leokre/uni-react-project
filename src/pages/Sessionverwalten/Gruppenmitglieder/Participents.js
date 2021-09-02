@@ -177,6 +177,7 @@ return (
         </div>
        
         <div className="table-cell1 last-cell1">
+      
         <DeleteIcon  className ="icon"onClick = {()=>onDelete(participent.userID)}/>
         </div> 
 

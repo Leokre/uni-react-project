@@ -28,7 +28,7 @@ const Einladungslink = ({currentSession}) => {
             }).then(response => {
                 console.log("resp: " + response)
                 if(!response.data) return
-                console.log("InvCode: response.data.InvitationCode")
+                console.log("InvCode: " + response.data.InvitationCode)
                 setCode(response.data.InvitationCode)
               
           })
